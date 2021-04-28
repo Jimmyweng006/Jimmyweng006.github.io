@@ -190,6 +190,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/28/LeetCode-1824-Minimum-Sideway-Jumps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jimmy_kiet">
+      <meta itemprop="description" content="You shoot me down, but I won't fall, I am titanium.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/28/LeetCode-1824-Minimum-Sideway-Jumps/" class="post-title-link" itemprop="url">LeetCode 1824. Minimum Sideway Jumps</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-28 13:54:32 / Modified: 13:55:52" itemprop="dateCreated datePublished" datetime="2021-04-28T13:54:32+08:00">2021-04-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="LeetCode-1824-Minimum-Sideway-Jumps"><a href="#LeetCode-1824-Minimum-Sideway-Jumps" class="headerlink" title="LeetCode 1824. Minimum Sideway Jumps"></a>LeetCode 1824. Minimum Sideway Jumps</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-sideway-jumps/">https://leetcode.com/problems/minimum-sideway-jumps/</a></p>
+</blockquote>
+<hr>
+<p>這題首先要定義好dp[i][j]，在此我定義為老套路<br>dp[i][j]: minimum sideway jumps to point j at lane i</p>
+<p>之後推出狀態轉移方程:<br>if obstacles[j] == i + 1 then dp[i][j] = INT_MAX(如果當前路上有障礙則無法到達)<br>else dp[i][j] = dp[i-1][j] (從上一個point直接過來)</p>
+<p>注意如果只寫到這邊的話，障礙後面的dp值會被設為INT_MAX，然而這是錯誤的，因為那個點的值有可能可以被該point的其他lane更新(從同個點的不同lane跳過來)</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/28/LeetCode-1824-Minimum-Sideway-Jumps/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/27/LeetCode-1838-Frequency-of-the-Most-Frequent-Element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -497,7 +578,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -510,7 +591,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
