@@ -215,7 +215,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-28 13:54:32 / Modified: 13:55:52" itemprop="dateCreated datePublished" datetime="2021-04-28T13:54:32+08:00">2021-04-28</time>
+              <time title="Created: 2021-04-28 13:54:32 / Modified: 13:57:47" itemprop="dateCreated datePublished" datetime="2021-04-28T13:54:32+08:00">2021-04-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,10 +241,6 @@
           <h3 id="LeetCode-1824-Minimum-Sideway-Jumps"><a href="#LeetCode-1824-Minimum-Sideway-Jumps" class="headerlink" title="LeetCode 1824. Minimum Sideway Jumps"></a>LeetCode 1824. Minimum Sideway Jumps</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-sideway-jumps/">https://leetcode.com/problems/minimum-sideway-jumps/</a></p>
 </blockquote>
-<hr>
-<p>這題首先要定義好dp[i][j]，在此我定義為老套路<br>dp[i][j]: minimum sideway jumps to point j at lane i</p>
-<p>之後推出狀態轉移方程:<br>if obstacles[j] == i + 1 then dp[i][j] = INT_MAX(如果當前路上有障礙則無法到達)<br>else dp[i][j] = dp[i-1][j] (從上一個point直接過來)</p>
-<p>注意如果只寫到這邊的話，障礙後面的dp值會被設為INT_MAX，然而這是錯誤的，因為那個點的值有可能可以被該point的其他lane更新(從同個點的不同lane跳過來)</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/28/LeetCode-1824-Minimum-Sideway-Jumps/#more" rel="contents">
