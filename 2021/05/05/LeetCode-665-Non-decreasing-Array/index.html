@@ -28,7 +28,7 @@
 <meta property="og:description" content="LeetCode 665. Non-decreasing Array https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;non-decreasing-array&#x2F;  期中結束刷題紓壓囉">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-05T13:30:36.000Z">
-<meta property="article:modified_time" content="2021-05-05T14:06:44.019Z">
+<meta property="article:modified_time" content="2021-05-05T14:13:27.675Z">
 <meta property="article:author" content="Jimmy_kiet">
 <meta property="article:tag" content="May LeetCoding Challenge 2021">
 <meta property="article:tag" content="Greedy">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-05 21:30:36 / Modified: 22:06:44" itemprop="dateCreated datePublished" datetime="2021-05-05T21:30:36+08:00">2021-05-05</time>
+              <time title="Created: 2021-05-05 21:30:36 / Modified: 22:13:27" itemprop="dateCreated datePublished" datetime="2021-05-05T21:30:36+08:00">2021-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,7 +248,8 @@
 <p>期中結束刷題紓壓囉</p>
 <span id="more"></span>
 <hr>
-<p>這題可以先簡化只有為三個值的話要怎麼判斷<br>大致示意圖如下，分為兩個case<br>(1)<br>     4<br>    / <br>   /   <br>  /     2<br> 1<br>i-1  i  i+1<br>(2)<br>    4<br>   / <br>  /   <br> 3     <br>        1<br>i-1 i    i<br>基本上要嘛你就是改小，不然就是改大(廢話<br>不過這裡greedy的思想就是你可以的話就改小，這樣才比較不會影響後面的人嘛(題目限制只能改一個值)<br>Case 1: 這裡可以很輕易的把nums[i]小，也就是改成下一個值nums[i+1]以滿足non-decreasing<br>Case 2: 這裡不能直接改小，因為nums[i-1] &gt; nums[i+1]，所以要改大，讓nums[i+1] = nums[i]</p>
+<p>這題可以先簡化只有為三個值的話要怎麼判斷<br>可以分為兩個case，示意圖可以參考下面解法的評論區，這邊格式會跑掉就不弄了QQ<br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/non-decreasing-array/discuss/106826/JavaC%2B%2B-Simple-greedy-like-solution-with-explanation">https://leetcode.com/problems/non-decreasing-array/discuss/106826/JavaC%2B%2B-Simple-greedy-like-solution-with-explanation</a></p>
+<p>基本上要嘛你就是改小，不然就是改大(廢話<br>不過這裡greedy的思想就是你可以的話就改小，這樣才比較不會影響後面的人嘛(題目限制只能改一個值)<br>Case 1: 這裡可以很輕易的把nums[i]小，也就是改成下一個值nums[i+1]以滿足non-decreasing<br>Case 2: 這裡不能直接改小，因為nums[i-1] &gt; nums[i+1]，所以要改大，讓nums[i+1] = nums[i]</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">checkPossibility</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt; nums[i+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="comment">// 注意等號</span></span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">0</span> || nums[i<span class="number">-1</span>] &lt;= nums[i+<span class="number">1</span>])&#123;</span><br><span class="line">                    nums[i] = nums[i+<span class="number">1</span>];</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    nums[i+<span class="number">1</span>] = nums[i];</span><br><span class="line">                &#125;</span><br><span class="line">                cnt++;</span><br><span class="line">                <span class="keyword">if</span>(cnt &gt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
