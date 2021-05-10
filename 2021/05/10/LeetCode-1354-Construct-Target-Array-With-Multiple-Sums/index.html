@@ -28,7 +28,7 @@
 <meta property="og:description" content="LeetCode 1354. Construct Target Array With Multiple Sums https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;construct-target-array-with-multiple-sums&#x2F;  正著做不出來就反著做，雖然我反著也沒做出來 :)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-10T04:10:14.000Z">
-<meta property="article:modified_time" content="2021-05-10T08:54:15.345Z">
+<meta property="article:modified_time" content="2021-05-10T11:06:00.818Z">
 <meta property="article:author" content="Jimmy_kiet">
 <meta property="article:tag" content="May LeetCoding Challenge 2021">
 <meta property="article:tag" content="Math">
@@ -220,7 +220,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-10 12:10:14 / Modified: 16:54:15" itemprop="dateCreated datePublished" datetime="2021-05-10T12:10:14+08:00">2021-05-10</time>
+              <time title="Created: 2021-05-10 12:10:14 / Modified: 19:06:00" itemprop="dateCreated datePublished" datetime="2021-05-10T12:10:14+08:00">2021-05-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,13 +251,14 @@
 <hr>
 <p>這題的基本思路是逆推回來。</p>
 <ul>
-<li>首先我們先看到當前array裡最大的元素，這個元素一定是上一步驟的元素和繼承過來的<br>所以每次我們只要拿出當前array裡的最大值，並將它減去除了最大值外的和，即可得到上一步驟的值。</li>
+<li>首先我們先看到當前array裡最大的元素，這個元素一定是上一步驟的元素和繼承過來的</li>
 </ul>
+<p>所以每次我們只要拿出當前array裡的最大值，並將它減去除了最大值外的和，即可得到上一步驟的值。</p>
 <p>到這邊一切都是這麼的美好，然而當你注意到target值的範圍時就會發現不妙了。<br>考慮test case[1, 100]，我們需要操作100次(linear)才能達到解，這對1e9的範圍來說想AC根本是天方夜譚。</p>
 <p>所以這邊我們需要做優化，基本上上面的操作就是在做減法，一值減來減去你有什麼頭緒嗎(?<br>沒錯就是除法啦(轉好硬，對於要將最大值轉為它應該有的樣子，我們只要做一次mod即可。<br>這邊特別注意兩種情況皆為return false:</p>
 <ul>
 <li>others = 0(代表array只有兩個元素，而最大的元素 != 1)</li>
-<li>cur &lt;= sum(代表r可能為0或又是不變(等於cur) 兩種都是不合法的)</li>
+<li>cur &lt;= sum(代表r可能為0或是不變(等於cur) 兩種都是不合法的)</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPossible</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; target)</span> </span>&#123;</span><br><span class="line">        <span class="function">priority_queue&lt;<span class="keyword">int</span>&gt; <span class="title">pq</span><span class="params">(target.begin(), target.end())</span></span>;</span><br><span class="line">        ll sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span>&amp; i: target) sum += i;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> cur = pq.<span class="built_in">top</span>();</span><br><span class="line">            pq.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span>(cur == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            sum -= cur;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(sum == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(cur &lt;= sum) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> r = cur % sum;</span><br><span class="line">            sum += r;</span><br><span class="line">            pq.<span class="built_in">push</span>(r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
