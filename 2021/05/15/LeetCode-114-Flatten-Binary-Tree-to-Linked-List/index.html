@@ -28,10 +28,10 @@
 <meta property="og:description" content="LeetCode 114. Flatten Binary Tree to Linked List https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;flatten-binary-tree-to-linked-list&#x2F;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-15T15:35:07.000Z">
-<meta property="article:modified_time" content="2021-05-15T15:55:50.483Z">
+<meta property="article:modified_time" content="2021-05-15T15:58:07.143Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="Tree">
 <meta property="article:tag" content="May LeetCoding Challenge 2021">
+<meta property="article:tag" content="Tree">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/05/15/LeetCode-114-Flatten-Binary-Tree-to-Linked-List/">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-15 23:35:07 / Modified: 23:55:50" itemprop="dateCreated datePublished" datetime="2021-05-15T23:35:07+08:00">2021-05-15</time>
+              <time title="Created: 2021-05-15 23:35:07 / Modified: 23:58:07" itemprop="dateCreated datePublished" datetime="2021-05-15T23:35:07+08:00">2021-05-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,9 +250,9 @@
 <p>這題是之前在<a target="_blank" rel="noopener" href="https://labuladong.gitbook.io/algo/">labuladong的算法小抄</a>學習的Tree的題目，這次自己寫還是差了一點啊…不過現在回來寫這題也更有想法跟感觸了！</p>
 <p>Tree的題目十之八九用遞迴解決，首先我們還是要搞清楚主函式的定義為何</p>
 <ul>
-<li>flatten(TreeNode* root) 給定一個Tree的root後就會將這棵樹變成一條list<br>了解定義後我們把整個函式的步驟拆一下</li>
+<li>flatten(TreeNode* root) 給定一個Tree的root後就會將這棵樹變成一條list</li>
 </ul>
-<p>1.把左右子樹變成list<br>2.將左子樹接在root的右邊，再將原本的右子樹接在左子樹的下面</p>
+<p>了解定義後我們把整個函式的步驟拆一下<br>1.把左右子樹變成list<br>2.將左子樹接在root的右邊，再將原本的右子樹接在左子樹的下面</p>
 <p>光這樣看可能會覺得很神奇，其實這也就是Tree的後序遍歷而已，但這也正是遞迴奧妙的地方阿。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">flatten</span>(root-&gt;left);</span><br><span class="line">        <span class="built_in">flatten</span>(root-&gt;right);</span><br><span class="line"></span><br><span class="line">        TreeNode* left = root-&gt;left;</span><br><span class="line">        TreeNode* right = root-&gt;right;</span><br><span class="line"></span><br><span class="line">        root-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">        root-&gt;right = left;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(root-&gt;right)&#123;</span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        root-&gt;right = right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
@@ -263,8 +263,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Tree/" rel="tag"># Tree</a>
               <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
+              <a href="/tags/Tree/" rel="tag"># Tree</a>
           </div>
 
         
