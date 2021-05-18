@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="You shoot me down, but I won&#39;t fall, I am titanium.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jimmy&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/HashMap/index.html">
+  <meta name="description" content="LeetCode 1048. Longest String Chain https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;longest-string-chain&#x2F;  第二篇來囉~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 1048. Longest String Chain">
+<meta property="og:url" content="http://example.com/2021/05/18/LeetCode-1048-Longest-String-Chain/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="You shoot me down, but I won&#39;t fall, I am titanium.">
+<meta property="og:description" content="LeetCode 1048. Longest String Chain https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;longest-string-chain&#x2F;  第二篇來囉~">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-18T11:25:09.000Z">
+<meta property="article:modified_time" content="2021-05-18T15:00:30.095Z">
 <meta property="article:author" content="Jimmy_kiet">
+<meta property="article:tag" content="Dynamic Programming">
+<meta property="article:tag" content="May LeetCoding Challenge 2021">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/HashMap/">
+<link rel="canonical" href="http://example.com/2021/05/18/LeetCode-1048-Longest-String-Chain/">
 
 
 <script id="page-configurations">
@@ -38,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: HashMap | Jimmy's Blog</title>
+  <title>LeetCode 1048. Longest String Chain | Jimmy's Blog</title>
   
 
 
@@ -184,51 +188,99 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">HashMap
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/18/LeetCode-1048-Longest-String-Chain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jimmy_kiet">
+      <meta itemprop="description" content="You shoot me down, but I won't fall, I am titanium.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode 1048. Longest String Chain
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-18 19:25:09 / Modified: 23:00:30" itemprop="dateCreated datePublished" datetime="2021-05-18T19:25:09+08:00">2021-05-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <h3 id="LeetCode-1048-Longest-String-Chain"><a href="#LeetCode-1048-Longest-String-Chain" class="headerlink" title="LeetCode 1048. Longest String Chain"></a>LeetCode 1048. Longest String Chain</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-string-chain/">https://leetcode.com/problems/longest-string-chain/</a></p>
+</blockquote>
+<p>第二篇來囉~</p>
+<span id="more"></span>
+<hr>
+<p>這題乍看之下蠻像LIS的，但在WA之後仔細看才知道Chain的順序是可以隨意取不用固定的…但還是能用LIS的思考去套用到這題上面！</p>
+<p>首先每個predecessor跟當前的word只會差一個字，但因為這題可以不用固定給定的words順序，所以可以先把words按照每個word的長度由小到大排序，一是比較好處理，二是比較長的word自然有比較高的機會能形成更長的chain嘛。</p>
+<p>之後比較tricky的地方在於，對於每一個word，我試圖去找對於word的每一個index，少了這一個index的char的word是否存在，存在的話就更新dp[word]](以當前這個word為chain的終點，最長的長度為多長)，之後再更新ans，這樣這題就完成啦~</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(string&amp; a, string&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a.<span class="built_in">size</span>() &lt; b.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestStrChain</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(words.<span class="built_in">begin</span>(), words.<span class="built_in">end</span>(), cmp);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> n = words.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;string, <span class="keyword">int</span>&gt; dp;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; word: words)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">                string pre = word.<span class="built_in">substr</span>(<span class="number">0</span>, i) + word.<span class="built_in">substr</span>(i + <span class="number">1</span>);</span><br><span class="line">                dp[word] = <span class="built_in">max</span>(dp[word], dp.<span class="built_in">count</span>(pre) == <span class="number">0</span> ? <span class="number">1</span> : dp[pre] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, dp[word]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-02T13:29:37+08:00"
-              content="2021-05-02">
-          05-02
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+              <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/02/LeetCode-745-Prefix-and-Suffix-Search/" itemprop="url">
-            <span itemprop="name">LeetCode 745. Prefix and Suffix Search</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/18/LeetCode-968-Binary-Tree-Cameras/" rel="prev" title="LeetCode 968. Binary Tree Cameras">
+      <i class="fa fa-chevron-left"></i> LeetCode 968. Binary Tree Cameras
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -281,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-1048-Longest-String-Chain"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1048. Longest String Chain</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
