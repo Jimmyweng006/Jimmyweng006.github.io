@@ -28,7 +28,7 @@
 <meta property="og:description" content="LeetCode 52. N-Queens II https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;n-queens-ii&#x2F;  跟51題有87%像XD">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-30T07:25:01.000Z">
-<meta property="article:modified_time" content="2021-05-30T07:35:32.670Z">
+<meta property="article:modified_time" content="2021-05-30T07:38:33.242Z">
 <meta property="article:author" content="Jimmy_kiet">
 <meta property="article:tag" content="May LeetCoding Challenge 2021">
 <meta property="article:tag" content="Backtracking">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-30 15:25:01 / Modified: 15:35:32" itemprop="dateCreated datePublished" datetime="2021-05-30T15:25:01+08:00">2021-05-30</time>
+              <time title="Created: 2021-05-30 15:25:01 / Modified: 15:38:33" itemprop="dateCreated datePublished" datetime="2021-05-30T15:25:01+08:00">2021-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,10 +250,10 @@
 <hr>
 <p>碰到這題剛好把之前判斷位子能不能放Queen的寫法優化一下。基本上我們直接用vector代表對角線的狀態</p>
 <ul>
-<li>對於給定的n會有2*n-1條對角線</li>
-<li>左上到右下為diag1，數值從0<del>2n-2；左下到右上為diag2，數值從0</del>2n-2</li>
+<li>對於給定的n會有2n-1條對角線</li>
+<li>左上到右下為diag1，數值範圍[0<del>2n-2]；左下到右上為diag2，數值範圍[0</del>2n-2]</li>
 </ul>
-<p>另外因為這題只要求有多少解，所以可以省去51題的vector<string>棋盤。</p>
+<p>另外因為這題只要求有多少解，所以可以省去51題的棋盤。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">totalNQueens</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        column = vector&lt;<span class="keyword">bool</span>&gt; (n);</span><br><span class="line">        diag1 = vector&lt;<span class="keyword">bool</span>&gt; (<span class="number">2</span> * n - <span class="number">1</span>);</span><br><span class="line">        diag2 = vector&lt;<span class="keyword">bool</span>&gt; (<span class="number">2</span> * n - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">backtrack</span>(n, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">help</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> r, <span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !column[c] &amp;&amp; !diag1[c+r] &amp;&amp; !diag2[c-r+(n<span class="number">-1</span>)];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> row)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(row == n) ans++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; n; col++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="built_in">help</span>(n, row, col)) <span class="keyword">continue</span>;</span><br><span class="line">            column[col] = <span class="literal">true</span>;</span><br><span class="line">            diag1[col+row] = <span class="literal">true</span>;</span><br><span class="line">            diag2[col-row+(n<span class="number">-1</span>)] = <span class="literal">true</span>;</span><br><span class="line">            <span class="built_in">backtrack</span>(n, row + <span class="number">1</span>);</span><br><span class="line">            column[col] = <span class="literal">false</span>;</span><br><span class="line">            diag1[col+row] = <span class="literal">false</span>;</span><br><span class="line">            diag2[col-row+(n<span class="number">-1</span>)] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    vector&lt;<span class="keyword">bool</span>&gt; column;</span><br><span class="line">    vector&lt;<span class="keyword">bool</span>&gt; diag1;</span><br><span class="line">    vector&lt;<span class="keyword">bool</span>&gt; diag2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
