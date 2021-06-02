@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 304. Range Sum Query 2D - Immutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-2d-immutable&#x2F;  WFH心好累…台灣防疫加油！">
+  <meta name="description" content="LeetCode 695. Max Area of Island https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;max-area-of-island&#x2F;  不知不覺間一個月就過去了，之後也要繼續堅持！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 304. Range Sum Query 2D - Immutable">
-<meta property="og:url" content="http://example.com/2021/05/13/LeetCode-304-Range-Sum-Query-2D-Immutable/index.html">
+<meta property="og:title" content="LeetCode 695. Max Area of Island">
+<meta property="og:url" content="http://example.com/2021/06/02/LeetCode-695-Max-Area-of-Island/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 304. Range Sum Query 2D - Immutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-2d-immutable&#x2F;  WFH心好累…台灣防疫加油！">
+<meta property="og:description" content="LeetCode 695. Max Area of Island https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;max-area-of-island&#x2F;  不知不覺間一個月就過去了，之後也要繼續堅持！">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-13T09:40:36.000Z">
-<meta property="article:modified_time" content="2021-05-13T10:16:57.623Z">
+<meta property="article:published_time" content="2021-06-02T07:03:40.000Z">
+<meta property="article:modified_time" content="2021-06-02T07:10:41.156Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="May LeetCoding Challenge 2021">
-<meta property="article:tag" content="Dynamic Programming">
+<meta property="article:tag" content="Depth First Search">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/05/13/LeetCode-304-Range-Sum-Query-2D-Immutable/">
+<link rel="canonical" href="http://example.com/2021/06/02/LeetCode-695-Max-Area-of-Island/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 304. Range Sum Query 2D - Immutable | Jimmy's Blog</title>
+  <title>LeetCode 695. Max Area of Island | Jimmy's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/13/LeetCode-304-Range-Sum-Query-2D-Immutable/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/02/LeetCode-695-Max-Area-of-Island/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 304. Range Sum Query 2D - Immutable
+          LeetCode 695. Max Area of Island
         </h1>
 
         <div class="post-meta">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-13 17:40:36 / Modified: 18:16:57" itemprop="dateCreated datePublished" datetime="2021-05-13T17:40:36+08:00">2021-05-13</time>
+              <time title="Created: 2021-06-02 15:03:40 / Modified: 15:10:41" itemprop="dateCreated datePublished" datetime="2021-06-02T15:03:40+08:00">2021-06-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,18 +242,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-304-Range-Sum-Query-2D-Immutable"><a href="#LeetCode-304-Range-Sum-Query-2D-Immutable" class="headerlink" title="LeetCode 304. Range Sum Query 2D - Immutable"></a>LeetCode 304. Range Sum Query 2D - Immutable</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/range-sum-query-2d-immutable/">https://leetcode.com/problems/range-sum-query-2d-immutable/</a></p>
+        <h3 id="LeetCode-695-Max-Area-of-Island"><a href="#LeetCode-695-Max-Area-of-Island" class="headerlink" title="LeetCode 695. Max Area of Island"></a>LeetCode 695. Max Area of Island</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/max-area-of-island/">https://leetcode.com/problems/max-area-of-island/</a></p>
 </blockquote>
-<p>WFH心好累…台灣防疫加油！</p>
+<p>不知不覺間一個月就過去了，之後也要繼續堅持！</p>
 <span id="more"></span>
 <hr>
-<p>寫了一個跟去年九月第一次練習這題的時候差不多的解法，但就差在沒有把空間多開一格，被edge case搞到要瘋掉…<br>這題在於如何快速的求解範圍(建立查詢的矩陣O(mn)，之後只需要O(1)時間即可查詢)，透過觀察可以發現，任意的矩陣範圍(r1, c1), (r2, c2)總和，可以表示為4個子矩陣((0,0)到(r,c))的加減總和。</p>
-<ul>
-<li>e.q. (2,1)到(4,3)的總和 = 子矩陣(4,3) - 子矩陣(1,3) - 子矩陣(4,0) + 子矩陣(1,0)</li>
-</ul>
-<p>而建立查詢矩陣的方法差不多，當前的解只跟左邊、上面、左上有關係，剩下就是注意index加減的問題了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumMatrix</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">NumMatrix</span>(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        <span class="keyword">int</span> m = matrix.<span class="built_in">size</span>(), n = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        matrix_ = vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; (m + <span class="number">1</span>, vector&lt;<span class="keyword">int</span>&gt;(n + <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m + <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n + <span class="number">1</span>; j++)&#123;</span><br><span class="line">                matrix_[i][j] = matrix_[i][j<span class="number">-1</span>] + matrix_[i<span class="number">-1</span>][j] - matrix_[i<span class="number">-1</span>][j<span class="number">-1</span>] + matrix[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumRegion</span><span class="params">(<span class="keyword">int</span> row1, <span class="keyword">int</span> col1, <span class="keyword">int</span> row2, <span class="keyword">int</span> col2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> matrix_[row2 + <span class="number">1</span>][col2 + <span class="number">1</span>] - matrix_[row1][col2 + <span class="number">1</span>] - matrix_[row2 + <span class="number">1</span>][col1] + matrix_[row1][col1];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; matrix_;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>基礎DFS運用。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> dir[<span class="number">4</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">-1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">-1</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxAreaOfIsland</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = grid.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(grid[i][j] == <span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="built_in">dfs</span>(grid, i, j, ans);</span><br><span class="line">                    ret = <span class="built_in">max</span>(ret, ans);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid, <span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span>&amp; ans)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = grid.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(r &lt; <span class="number">0</span> || r &gt;= m || c &lt; <span class="number">0</span> || c &gt;= n || grid[r][c] != <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">        ans++;</span><br><span class="line">        grid[r][c] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d++)&#123;</span><br><span class="line">            <span class="built_in">dfs</span>(grid, r + dir[d][<span class="number">0</span>], c + dir[d][<span class="number">1</span>], ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -262,8 +259,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
-              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+              <a href="/tags/Depth-First-Search/" rel="tag"># Depth First Search</a>
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
           </div>
 
         
@@ -272,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/12/LeetCode-1423-Maximum-Points-You-Can-Obtain-from-Cards/" rel="prev" title="LeetCode 1423. Maximum Points You Can Obtain from Cards">
-      <i class="fa fa-chevron-left"></i> LeetCode 1423. Maximum Points You Can Obtain from Cards
+    <a href="/2021/06/01/LeetCode-1268-Search-Suggestions-System/" rel="prev" title="LeetCode 1268. Search Suggestions System">
+      <i class="fa fa-chevron-left"></i> LeetCode 1268. Search Suggestions System
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/14/LeetCode-816-Ambiguous-Coordinates/" rel="next" title="LeetCode 816. Ambiguous Coordinates">
-      LeetCode 816. Ambiguous Coordinates <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -337,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-304-Range-Sum-Query-2D-Immutable"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 304. Range Sum Query 2D - Immutable</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-695-Max-Area-of-Island"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 695. Max Area of Island</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
