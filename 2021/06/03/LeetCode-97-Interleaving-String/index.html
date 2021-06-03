@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="Common Deploy command12hexo cleanhexo d -g  Create a new post1hexo new &quot;My New Post&quot;">
+  <meta name="description" content="LeetCode 97. Interleaving String https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;interleaving-string&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo common commands">
-<meta property="og:url" content="http://example.com/2021/04/24/hexo-common-commands/index.html">
+<meta property="og:title" content="LeetCode 97. Interleaving String">
+<meta property="og:url" content="http://example.com/2021/06/03/LeetCode-97-Interleaving-String/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="Common Deploy command12hexo cleanhexo d -g  Create a new post1hexo new &quot;My New Post&quot;">
+<meta property="og:description" content="LeetCode 97. Interleaving String https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;interleaving-string&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-24T10:21:34.000Z">
-<meta property="article:modified_time" content="2021-05-02T06:07:19.150Z">
+<meta property="article:published_time" content="2021-06-03T15:33:36.000Z">
+<meta property="article:modified_time" content="2021-06-03T15:58:35.069Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Dynamic Programming">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/04/24/hexo-common-commands/">
+<link rel="canonical" href="http://example.com/2021/06/03/LeetCode-97-Interleaving-String/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>hexo common commands | Jimmy's Blog</title>
+  <title>LeetCode 97. Interleaving String | Jimmy's Blog</title>
   
 
 
@@ -194,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/24/hexo-common-commands/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/LeetCode-97-Interleaving-String/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo common commands
+          LeetCode 97. Interleaving String
         </h1>
 
         <div class="post-meta">
@@ -216,23 +217,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-04-24 18:21:34" itemprop="dateCreated datePublished" datetime="2021-04-24T18:21:34+08:00">2021-04-24</time>
+              <time title="Created: 2021-06-03 23:33:36 / Modified: 23:58:35" itemprop="dateCreated datePublished" datetime="2021-06-03T23:33:36+08:00">2021-06-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 14:07:19" itemprop="dateModified" datetime="2021-05-02T14:07:19+08:00">2021-05-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
                 </span>
             </span>
 
@@ -247,11 +242,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Common-Deploy-command"><a href="#Common-Deploy-command" class="headerlink" title="Common Deploy command"></a>Common Deploy command</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
-
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="LeetCode-97-Interleaving-String"><a href="#LeetCode-97-Interleaving-String" class="headerlink" title="LeetCode 97. Interleaving String"></a>LeetCode 97. Interleaving String</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/interleaving-string/">https://leetcode.com/problems/interleaving-string/</a></p>
+</blockquote>
 <span id="more"></span>
+<hr>
+<p>經典two string的DP題。</p>
+<p>首先一樣先定義好dp[i][j]</p>
+<ul>
+<li>dp[i][j] =  whether s3[0:i+j] is formed by an interleaving of s1[0:i] and s2[0:j]</li>
+</ul>
+<p>狀態轉移方程可以這樣思考</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s1: X X X i</span><br><span class="line">S2: Y Y Y Y j</span><br><span class="line">s3: Z Z Z Z Z Z Z Z</span><br><span class="line"></span><br><span class="line">當i等於S3的最後一個元素時，那我們只要考慮他的子問題dp[i-1][j]，也就是s1[0:i-1] and s2[0:j]是否能形成s3[0:i+j-1]，是的話代表當前dp[i][j]當然就是true了；j的情況亦同，只要考慮dp[i][j-1]即可。</span><br></pre></td></tr></table></figure>
+<p>邊界條件的話也一樣: dp[i][0]表示用s1[0:i]與s2=””是否能形成s3[0:i]<br>另外我們有對string做padding的話，問題就轉換成，s3[1:i+j] is formed by an interleaving of s1[1:i] and s2[1:j]，寫起來格外舒服，讚！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isInterleave</span><span class="params">(string s1, string s2, string s3)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n1 = s1.<span class="built_in">size</span>(), n2 = s2.<span class="built_in">size</span>(), n3 = s3.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(n1 + n2 != n3) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">dp</span>(n1+<span class="number">1</span>, vector&lt;<span class="keyword">bool</span>&gt;(n2+<span class="number">1</span>));</span><br><span class="line">        s1 = <span class="string">&quot;*&quot;</span> + s1;</span><br><span class="line">        s2 = <span class="string">&quot;*&quot;</span> + s2;</span><br><span class="line">        s3 = <span class="string">&quot;*&quot;</span> + s3;</span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n1; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s1[i] == s3[i] &amp;&amp; dp[i<span class="number">-1</span>][<span class="number">0</span>])&#123;</span><br><span class="line">                dp[i][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n2; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s2[j] == s3[j] &amp;&amp; dp[<span class="number">0</span>][j<span class="number">-1</span>])&#123;</span><br><span class="line">                dp[<span class="number">0</span>][j] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n1; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n2; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s1[i] == s3[i+j] &amp;&amp; dp[i<span class="number">-1</span>][j])&#123;</span><br><span class="line">                    dp[i][j] = <span class="literal">true</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s2[j] == s3[i+j] &amp;&amp; dp[i][j<span class="number">-1</span>])&#123;</span><br><span class="line">                    dp[i][j] = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[n1][n2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -260,7 +264,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
           </div>
 
         
@@ -268,11 +273,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/04/25/LeetCode-1834-Single-Threaded-CPU/" rel="next" title="LeetCode 1834. Single-Threaded CPU">
-      LeetCode 1834. Single-Threaded CPU <i class="fa fa-chevron-right"></i>
+    <a href="/2021/06/02/LeetCode-695-Max-Area-of-Island/" rel="prev" title="LeetCode 695. Max Area of Island">
+      <i class="fa fa-chevron-left"></i> LeetCode 695. Max Area of Island
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -331,7 +336,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Deploy-command"><span class="nav-number">1.</span> <span class="nav-text">Common Deploy command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">2.</span> <span class="nav-text">Create a new post</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-97-Interleaving-String"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 97. Interleaving String</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
