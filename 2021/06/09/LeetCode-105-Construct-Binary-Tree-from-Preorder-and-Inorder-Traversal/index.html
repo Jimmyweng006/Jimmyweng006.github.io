@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 943. Find the Shortest Superstring https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;find-the-shortest-superstring&#x2F;  這就是傳說中的TSP嗎…真的太難了跳過:(">
+  <meta name="description" content="LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;construct-binary-tree-from-preorder-and-inorder-traversal&#x2F;  經典Binary Bree考題！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 943. Find the Shortest Superstring">
-<meta property="og:url" content="http://example.com/2021/05/24/LeetCode-943-Find-the-Shortest-Superstring/index.html">
+<meta property="og:title" content="LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal">
+<meta property="og:url" content="http://example.com/2021/06/09/LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 943. Find the Shortest Superstring https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;find-the-shortest-superstring&#x2F;  這就是傳說中的TSP嗎…真的太難了跳過:(">
+<meta property="og:description" content="LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;construct-binary-tree-from-preorder-and-inorder-traversal&#x2F;  經典Binary Bree考題！">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-24T13:34:20.000Z">
-<meta property="article:modified_time" content="2021-05-24T13:37:34.553Z">
+<meta property="article:published_time" content="2021-06-09T13:45:55.000Z">
+<meta property="article:modified_time" content="2021-06-09T14:13:53.693Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="May LeetCoding Challenge 2021">
-<meta property="article:tag" content="Dynamic Programming">
+<meta property="article:tag" content="Tree">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/05/24/LeetCode-943-Find-the-Shortest-Superstring/">
+<link rel="canonical" href="http://example.com/2021/06/09/LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 943. Find the Shortest Superstring | Jimmy's Blog</title>
+  <title>LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal | Jimmy's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/LeetCode-943-Find-the-Shortest-Superstring/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/09/LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 943. Find the Shortest Superstring
+          LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal
         </h1>
 
         <div class="post-meta">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-24 21:34:20 / Modified: 21:37:34" itemprop="dateCreated datePublished" datetime="2021-05-24T21:34:20+08:00">2021-05-24</time>
+              <time title="Created: 2021-06-09 21:45:55 / Modified: 22:13:53" itemprop="dateCreated datePublished" datetime="2021-06-09T21:45:55+08:00">2021-06-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,14 +242,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-943-Find-the-Shortest-Superstring"><a href="#LeetCode-943-Find-the-Shortest-Superstring" class="headerlink" title="LeetCode 943. Find the Shortest Superstring"></a>LeetCode 943. Find the Shortest Superstring</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-the-shortest-superstring/">https://leetcode.com/problems/find-the-shortest-superstring/</a></p>
+        <h3 id="LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal"><a href="#LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal" class="headerlink" title="LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal"></a>LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/</a></p>
 </blockquote>
-<p>這就是傳說中的TSP嗎…真的太難了跳過:(</p>
+<p>經典Binary Bree考題！</p>
 <span id="more"></span>
 <hr>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=VWUpNRvhLkQ">https://www.youtube.com/watch?v=VWUpNRvhLkQ</a></p>
-
+<p>我們要做的事情其實很簡單，只要把preorder的元素依序拿出來，然後在inorder找到對應的index後，直接對inorder剩下的範圍遞迴即可。直接看範例可能比較好懂(?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">preorder &#x3D; [3,9,20,15,7], inorder &#x3D; [9,3,15,20,7]</span><br><span class="line">當我們幫preorder的第一個元素3找到在inorder的位子後，把它拆分開來，也就是把inorder拆成left, root, right的模式</span><br><span class="line">left   rooot    right</span><br><span class="line">  9      3    15, 20, 7</span><br><span class="line">這樣對於3而言，他的左子樹就一定是9，也就是preorder的下一個元素(preorder為root, left, right形式)，而右子樹自然就是由後面的三個元素組合而成。</span><br><span class="line">再往下看一點，當我看到preorder的第三個元素20，我在inorder找到他的位子後就可以準備遞迴了，但注意這時候的range為左子樹: [上一層的l: 當前位子-1], 右子樹: [當前位子+1, 上一層的right]，不要無腦地直接寫0, n-1，不然會像我一樣debug很久...</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Time: O(nlgn)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">buildTree</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; preorder, vector&lt;<span class="keyword">int</span>&gt;&amp; inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cur_idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">help</span>(preorder, inorder, <span class="number">0</span>, preorder.<span class="built_in">size</span>() - <span class="number">1</span>, cur_idx);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">TreeNode* <span class="title">help</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; preorder, vector&lt;<span class="keyword">int</span>&gt;&amp; inorder, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>&amp; cur_idx)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = preorder.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(l &gt; r) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">int</span> root_v = preorder[cur_idx++];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> root_idx;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(inorder[i] == root_v)&#123;</span><br><span class="line">                root_idx = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(root_v);</span><br><span class="line">        root-&gt;left = <span class="built_in">help</span>(preorder, inorder, l, root_idx - <span class="number">1</span>, cur_idx);</span><br><span class="line">        root-&gt;right = <span class="built_in">help</span>(preorder, inorder, root_idx + <span class="number">1</span>, r, cur_idx);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// Time: O(n)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">buildTree</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; preorder, vector&lt;<span class="keyword">int</span>&gt;&amp; inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cur_idx = <span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inorder.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            m[inorder[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">help</span>(preorder, inorder, <span class="number">0</span>, preorder.<span class="built_in">size</span>() - <span class="number">1</span>, cur_idx, m);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">TreeNode* <span class="title">help</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; preorder, vector&lt;<span class="keyword">int</span>&gt;&amp; inorder, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>&amp; cur_idx, unordered_map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&amp; m)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; r) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">int</span> root_v = preorder[cur_idx++];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> root_idx = m[root_v];</span><br><span class="line"></span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(root_v);</span><br><span class="line">        root-&gt;left = <span class="built_in">help</span>(preorder, inorder, l, root_idx - <span class="number">1</span>, cur_idx, m);</span><br><span class="line">        root-&gt;right = <span class="built_in">help</span>(preorder, inorder, root_idx + <span class="number">1</span>, r, cur_idx, m);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -258,8 +259,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
-              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+              <a href="/tags/Tree/" rel="tag"># Tree</a>
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
           </div>
 
         
@@ -268,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/23/LeetCode-51-N-Queens/" rel="prev" title="LeetCode 51. N-Queens">
-      <i class="fa fa-chevron-left"></i> LeetCode 51. N-Queens
+    <a href="/2021/06/08/LeetCode-746-Min-Cost-Climbing-Stairs/" rel="prev" title="LeetCode 746. Min Cost Climbing Stairs">
+      <i class="fa fa-chevron-left"></i> LeetCode 746. Min Cost Climbing Stairs
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/25/LeetCode-709-To-Lower-Case/" rel="next" title="LeetCode 709. To Lower Case">
-      LeetCode 709. To Lower Case <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -333,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-943-Find-the-Shortest-Superstring"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 943. Find the Shortest Superstring</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
