@@ -20,21 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 746. Min Cost Climbing Stairs https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;min-cost-climbing-stairs&#x2F;  偏簡單的一維DP題。">
+  <meta name="description" content="LeetCode 729. My Calendar I https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;my-calendar-i&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 746. Min Cost Climbing Stairs">
-<meta property="og:url" content="http://example.com/2021/06/08/LeetCode-746-Min-Cost-Climbing-Stairs/index.html">
+<meta property="og:title" content="LeetCode 729. My Calendar I">
+<meta property="og:url" content="http://example.com/2021/06/11/LeetCode-729-My-Calendar-I/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 746. Min Cost Climbing Stairs https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;min-cost-climbing-stairs&#x2F;  偏簡單的一維DP題。">
+<meta property="og:description" content="LeetCode 729. My Calendar I https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;my-calendar-i&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-08T14:05:34.000Z">
-<meta property="article:modified_time" content="2021-06-08T14:19:34.423Z">
+<meta property="article:published_time" content="2021-06-11T06:24:38.000Z">
+<meta property="article:modified_time" content="2021-06-11T14:39:45.125Z">
 <meta property="article:author" content="Jimmy_kiet">
 <meta property="article:tag" content="June LeetCoding Challenge 2021">
-<meta property="article:tag" content="Dynamic Programming">
+<meta property="article:tag" content="Binary Search">
+<meta property="article:tag" content="Sweep Line">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/06/08/LeetCode-746-Min-Cost-Climbing-Stairs/">
+<link rel="canonical" href="http://example.com/2021/06/11/LeetCode-729-My-Calendar-I/">
 
 
 <script id="page-configurations">
@@ -47,7 +48,7 @@
   };
 </script>
 
-  <title>LeetCode 746. Min Cost Climbing Stairs | Jimmy's Blog</title>
+  <title>LeetCode 729. My Calendar I | Jimmy's Blog</title>
   
 
 
@@ -195,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/08/LeetCode-746-Min-Cost-Climbing-Stairs/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/11/LeetCode-729-My-Calendar-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 746. Min Cost Climbing Stairs
+          LeetCode 729. My Calendar I
         </h1>
 
         <div class="post-meta">
@@ -219,7 +220,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-08 22:05:34 / Modified: 22:19:34" itemprop="dateCreated datePublished" datetime="2021-06-08T22:05:34+08:00">2021-06-08</time>
+              <time title="Created: 2021-06-11 14:24:38 / Modified: 22:39:45" itemprop="dateCreated datePublished" datetime="2021-06-11T14:24:38+08:00">2021-06-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,19 +243,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-746-Min-Cost-Climbing-Stairs"><a href="#LeetCode-746-Min-Cost-Climbing-Stairs" class="headerlink" title="LeetCode 746. Min Cost Climbing Stairs"></a>LeetCode 746. Min Cost Climbing Stairs</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/min-cost-climbing-stairs/">https://leetcode.com/problems/min-cost-climbing-stairs/</a></p>
+        <h3 id="LeetCode-729-My-Calendar-I"><a href="#LeetCode-729-My-Calendar-I" class="headerlink" title="LeetCode 729. My Calendar I"></a>LeetCode 729. My Calendar I</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/my-calendar-i/">https://leetcode.com/problems/my-calendar-i/</a></p>
 </blockquote>
-<p>偏簡單的一維DP題。</p>
 <span id="more"></span>
 <hr>
-<p>首先老樣子看出這是一題要用DP求解的題目後，就來定義DP</p>
-<ul>
-<li>dp[i]: minimum cost before leaving index i</li>
-</ul>
-<p>之後就簡單啦，因為每次只能移動一格或兩格，所以求解dp[i]的時候，只要從子問題(dp[i-1], dp[i-2])裡面取小的，再加上當前的cost就可以了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Space: O(n)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = cost.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(n)</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>] = cost[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = cost[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i<span class="number">-1</span>], dp[i<span class="number">-2</span>]) + cost[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(dp[n<span class="number">-1</span>], dp[n<span class="number">-2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// Space: O(1)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = cost.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> dp1= cost[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> dp2 = cost[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> dp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">            dp = <span class="built_in">min</span>(dp1, dp2) + cost[i];</span><br><span class="line">            dp2 = dp1;</span><br><span class="line">            dp1 = dp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(dp1, dp2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1------5</span><br><span class="line">        6------10</span><br><span class="line">                 11------13</span><br><span class="line">next: 4--7</span><br></pre></td></tr></table></figure>
+<p>對於每次要新增一個區間，只需要考慮兩點</p>
+<ol>
+<li>我們只要先找到第一個大於等於start的位子，只要不是沒找到(m_.end())，就用end去檢查有沒有overlap</li>
+<li>如果找到的不是第一個位子(m_.begin())，那我們就往前看一個位子，用start去檢查有沒有overlap</li>
+</ol>
+<p>當然這題也能用Sweep Line，對於start標記+1，end標記-1。從頭到尾掃一遍如果中途cur &gt; 1代表有overlap，那就取消標記。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Binary Search</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendar</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyCalendar</span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">book</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> it = m_.<span class="built_in">lower_bound</span>(start);</span><br><span class="line">        <span class="keyword">if</span>(it != m_.<span class="built_in">end</span>())&#123;</span><br><span class="line">            <span class="keyword">if</span>(end &gt; it-&gt;first)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> pre_it = it;</span><br><span class="line">        <span class="keyword">if</span>(pre_it != m_.<span class="built_in">begin</span>())&#123;</span><br><span class="line">            pre_it--;</span><br><span class="line">            <span class="keyword">if</span>(start &lt; pre_it-&gt;second)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        m_[start] = end;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m_;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// Sweep Line</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendar</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyCalendar</span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">book</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        calender_[start]++;</span><br><span class="line">        calender_[end]--;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp;x: calender_)&#123;</span><br><span class="line">            cur += x.second;</span><br><span class="line">            <span class="keyword">if</span>(cur &gt; <span class="number">1</span>)&#123;</span><br><span class="line">                calender_[start]--;</span><br><span class="line">                calender_[end]++;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; calender_;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -264,7 +265,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
-              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+              <a href="/tags/Binary-Search/" rel="tag"># Binary Search</a>
+              <a href="/tags/Sweep-Line/" rel="tag"># Sweep Line</a>
           </div>
 
         
@@ -273,13 +275,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/07/LeetCode-128-Longest-Consecutive-Sequence/" rel="prev" title="LeetCode 128. Longest Consecutive Sequence">
-      <i class="fa fa-chevron-left"></i> LeetCode 128. Longest Consecutive Sequence
+    <a href="/2021/06/10/LeetCode-1696-Jump-Game-VI/" rel="prev" title="LeetCode 1696. Jump Game VI">
+      <i class="fa fa-chevron-left"></i> LeetCode 1696. Jump Game VI
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/09/LeetCode-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/" rel="next" title="LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal">
-      LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -338,7 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-746-Min-Cost-Climbing-Stairs"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 746. Min Cost Climbing Stairs</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-729-My-Calendar-I"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 729. My Calendar I</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
