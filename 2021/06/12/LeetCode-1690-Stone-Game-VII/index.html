@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="You shoot me down, but I won&#39;t fall, I am titanium.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jimmy&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/May-LeetCoding-Challenge-2021/page/3/index.html">
+  <meta name="description" content="LeetCode 1690. Stone Game VII https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;stone-game-vii&#x2F;  第一次寫這樣的題型難度還是挺大的QQ，不過這題瞭解後也是套路滿滿阿…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 1690. Stone Game VII">
+<meta property="og:url" content="http://example.com/2021/06/12/LeetCode-1690-Stone-Game-VII/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="You shoot me down, but I won&#39;t fall, I am titanium.">
+<meta property="og:description" content="LeetCode 1690. Stone Game VII https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;stone-game-vii&#x2F;  第一次寫這樣的題型難度還是挺大的QQ，不過這題瞭解後也是套路滿滿阿…">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-12T14:15:53.000Z">
+<meta property="article:modified_time" content="2021-06-13T02:18:29.335Z">
 <meta property="article:author" content="Jimmy_kiet">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
+<meta property="article:tag" content="Dynamic Programming">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/May-LeetCoding-Challenge-2021/page/3/">
+<link rel="canonical" href="http://example.com/2021/06/12/LeetCode-1690-Stone-Game-VII/">
 
 
 <script id="page-configurations">
@@ -38,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: May LeetCoding Challenge 2021 | Jimmy's Blog</title>
+  <title>LeetCode 1690. Stone Game VII | Jimmy's Blog</title>
   
 
 
@@ -184,235 +188,107 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">May LeetCoding Challenge 2021
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/12/LeetCode-1690-Stone-Game-VII/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jimmy_kiet">
+      <meta itemprop="description" content="You shoot me down, but I won't fall, I am titanium.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode 1690. Stone Game VII
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-12 22:15:53" itemprop="dateCreated datePublished" datetime="2021-06-12T22:15:53+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-13 10:18:29" itemprop="dateModified" datetime="2021-06-13T10:18:29+08:00">2021-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-13T17:40:36+08:00"
-              content="2021-05-13">
-          05-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/13/LeetCode-304-Range-Sum-Query-2D-Immutable/" itemprop="url">
-            <span itemprop="name">LeetCode 304. Range Sum Query 2D - Immutable</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-12T17:02:05+08:00"
-              content="2021-05-12">
-          05-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/12/LeetCode-1423-Maximum-Points-You-Can-Obtain-from-Cards/" itemprop="url">
-            <span itemprop="name">LeetCode 1423. Maximum Points You Can Obtain from Cards</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-11T22:15:06+08:00"
-              content="2021-05-11">
-          05-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/11/LeetCode-204-Count-Primes/" itemprop="url">
-            <span itemprop="name">LeetCode 204. Count Primes</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-10T12:10:14+08:00"
-              content="2021-05-10">
-          05-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/10/LeetCode-1354-Construct-Target-Array-With-Multiple-Sums/" itemprop="url">
-            <span itemprop="name">LeetCode 1354. Construct Target Array With Multiple Sums</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-09T14:46:52+08:00"
-              content="2021-05-09">
-          05-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/09/LeetCode-906-Super-Palindromes/" itemprop="url">
-            <span itemprop="name">LeetCode 906. Super Palindromes</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-08T17:08:29+08:00"
-              content="2021-05-08">
-          05-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/08/LeetCode-583-Delete-Operation-for-Two-Strings/" itemprop="url">
-            <span itemprop="name">LeetCode 583. Delete Operation for Two Strings</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-07T22:37:47+08:00"
-              content="2021-05-07">
-          05-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/07/LeetCode-109-Convert-Sorted-List-to-Binary-Search-Tree/" itemprop="url">
-            <span itemprop="name">LeetCode 109. Convert Sorted List to Binary Search Tree</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-06T22:07:47+08:00"
-              content="2021-05-06">
-          05-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/06/LeetCode-45-Jump-Game-II/" itemprop="url">
-            <span itemprop="name">LeetCode 45. Jump Game II</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-05T21:30:36+08:00"
-              content="2021-05-05">
-          05-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/05/LeetCode-665-Non-decreasing-Array/" itemprop="url">
-            <span itemprop="name">LeetCode 665. Non-decreasing Array</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-04T09:03:20+08:00"
-              content="2021-05-04">
-          05-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/04/LeetCode-1480-Running-Sum-of-1d-Array/" itemprop="url">
-            <span itemprop="name">LeetCode 1480. Running Sum of 1d Array</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h3 id="LeetCode-1690-Stone-Game-VII"><a href="#LeetCode-1690-Stone-Game-VII" class="headerlink" title="LeetCode 1690. Stone Game VII"></a>LeetCode 1690. Stone Game VII</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/stone-game-vii/">https://leetcode.com/problems/stone-game-vii/</a></p>
+</blockquote>
+<p>第一次寫這樣的題型難度還是挺大的QQ，不過這題瞭解後也是套路滿滿阿…</p>
+<span id="more"></span>
+<hr>
+<p>首先這題一看就覺得十之八九是DP了，Greedy肯定是不行的。而對於兩位選手，其實他們都是要想辦法最大化自己與對手的分差，所以我們可以這樣定義DP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j]: maximum difference you can get in range[i:j]</span><br><span class="line">那麼轉移方程也算是容易看出來，你在這輪與對手的最大分差，等於你這輪的得分減掉對手在下一輪(range變小)的最大分差</span><br><span class="line">i [X X X X] &#x3D;&gt; (sum[i+1:j]) - dp[i+1][j]</span><br><span class="line">[X X X X] j &#x3D;&gt; (sum[i:j-1]) - dp[i][j-1]</span><br><span class="line">之後只要在兩個裡面選大的就行了。</span><br></pre></td></tr></table></figure>
+<p>因為我們每次都需要先知道下面以及左邊的值，所以可以選倒著遍歷(左至右，下到上)，當然也可以選斜著(左下到右上)但寫法比較麻煩一點QQ</p>
+<p>另外要特別注意prefix sum的定義，不然計算的時候很容易出錯…</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">stoneGameVII</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = stones.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">preSum</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n + <span class="number">1</span>; i++) preSum[i] = preSum[i<span class="number">-1</span>] + stones[i<span class="number">-1</span>];</span><br><span class="line"></span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">dp</span>(n, vector&lt;<span class="keyword">int</span>&gt;(n));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                dp[i][j] = <span class="built_in">max</span>(preSum[j+<span class="number">1</span>] - preSum[i+<span class="number">1</span>] - dp[i+<span class="number">1</span>][j],</span><br><span class="line">                               preSum[j] - preSum[i] - dp[i][j<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][n<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
+              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/11/LeetCode-729-My-Calendar-I/" rel="prev" title="LeetCode 729. My Calendar I">
+      <i class="fa fa-chevron-left"></i> LeetCode 729. My Calendar I
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/May-LeetCoding-Challenge-2021/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/tags/May-LeetCoding-Challenge-2021/">1</a><a class="page-number" href="/tags/May-LeetCoding-Challenge-2021/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/tags/May-LeetCoding-Challenge-2021/page/4/">4</a><a class="extend next" rel="next" href="/tags/May-LeetCoding-Challenge-2021/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
@@ -464,6 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-1690-Stone-Game-VII"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1690. Stone Game VII</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
