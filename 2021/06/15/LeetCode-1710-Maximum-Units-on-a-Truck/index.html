@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 318. Maximum Product of Word Lengths https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;maximum-product-of-word-lengths&#x2F;">
+  <meta name="description" content="LeetCode 1710. Maximum Units on a Truck https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;maximum-units-on-a-truck&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 318. Maximum Product of Word Lengths">
-<meta property="og:url" content="http://example.com/2021/05/28/LeetCode-318-Maximum-Product-of-Word-Lengths/index.html">
+<meta property="og:title" content="LeetCode 1710. Maximum Units on a Truck">
+<meta property="og:url" content="http://example.com/2021/06/15/LeetCode-1710-Maximum-Units-on-a-Truck/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 318. Maximum Product of Word Lengths https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;maximum-product-of-word-lengths&#x2F;">
+<meta property="og:description" content="LeetCode 1710. Maximum Units on a Truck https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;maximum-units-on-a-truck&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-28T12:29:07.000Z">
-<meta property="article:modified_time" content="2021-05-29T00:17:42.948Z">
+<meta property="article:published_time" content="2021-06-15T06:58:48.000Z">
+<meta property="article:modified_time" content="2021-06-15T07:04:50.958Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="May LeetCoding Challenge 2021">
-<meta property="article:tag" content="Bit Manipulation">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
+<meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/05/28/LeetCode-318-Maximum-Product-of-Word-Lengths/">
+<link rel="canonical" href="http://example.com/2021/06/15/LeetCode-1710-Maximum-Units-on-a-Truck/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 318. Maximum Product of Word Lengths | Jimmy's Blog</title>
+  <title>LeetCode 1710. Maximum Units on a Truck | Jimmy's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/28/LeetCode-318-Maximum-Product-of-Word-Lengths/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/15/LeetCode-1710-Maximum-Units-on-a-Truck/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 318. Maximum Product of Word Lengths
+          LeetCode 1710. Maximum Units on a Truck
         </h1>
 
         <div class="post-meta">
@@ -217,16 +217,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-05-28 20:29:07" itemprop="dateCreated datePublished" datetime="2021-05-28T20:29:07+08:00">2021-05-28</time>
+              <time title="Created: 2021-06-15 14:58:48 / Modified: 15:04:50" itemprop="dateCreated datePublished" datetime="2021-06-15T14:58:48+08:00">2021-06-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-29 08:17:42" itemprop="dateModified" datetime="2021-05-29T08:17:42+08:00">2021-05-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,15 +242,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-318-Maximum-Product-of-Word-Lengths"><a href="#LeetCode-318-Maximum-Product-of-Word-Lengths" class="headerlink" title="LeetCode 318. Maximum Product of Word Lengths"></a>LeetCode 318. Maximum Product of Word Lengths</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-of-word-lengths/">https://leetcode.com/problems/maximum-product-of-word-lengths/</a></p>
+        <h3 id="LeetCode-1710-Maximum-Units-on-a-Truck"><a href="#LeetCode-1710-Maximum-Units-on-a-Truck" class="headerlink" title="LeetCode 1710. Maximum Units on a Truck"></a>LeetCode 1710. Maximum Units on a Truck</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-units-on-a-truck/">https://leetcode.com/problems/maximum-units-on-a-truck/</a></p>
 </blockquote>
 <span id="more"></span>
 <hr>
-<p>這題的難點在於如何判斷兩個word是否有重複的char，這裡一個tricky的方法是把每一個word裡面的char用bit的方式表達。</p>
-<p>這種表達方式讓之後判斷兩個word是否有重複的char非常有效率(檢查兩個word的bitValue做&amp;運算是否等於零，e.g. ab =&gt; 0011, cd=&gt; 1100, ab &amp; cd = 0)。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = words.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">bitValue</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; c: words[i])&#123;</span><br><span class="line">                bitValue[i] |= <span class="number">1</span> &lt;&lt; (c - <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((bitValue[i] &amp; bitValue[j]) == <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">int</span> cur = words[i].<span class="built_in">size</span>() * words[j].<span class="built_in">size</span>();</span><br><span class="line">                    ans = <span class="built_in">max</span>(ans, cur);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<p>換個easy題輕鬆一下QQ</p>
+<p>為了最大化units，我們把unit大到小排序後，再將truckSize一個一個減去numberOfBoxes即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">1</span>] &gt; b[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximumUnits</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; boxTypes, <span class="keyword">int</span> truckSize)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(boxTypes.<span class="built_in">begin</span>(), boxTypes.<span class="built_in">end</span>(), cmp);</span><br><span class="line">        <span class="keyword">int</span> k = truckSize, n = boxTypes.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(k &lt; boxTypes[i][<span class="number">0</span>])&#123;</span><br><span class="line">                ans += k * boxTypes[i][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ans += boxTypes[i][<span class="number">0</span>] * boxTypes[i][<span class="number">1</span>];</span><br><span class="line">            k -= boxTypes[i][<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -265,8 +258,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
-              <a href="/tags/Bit-Manipulation/" rel="tag"># Bit Manipulation</a>
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
+              <a href="/tags/Greedy/" rel="tag"># Greedy</a>
           </div>
 
         
@@ -275,13 +268,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/27/LeetCode-1871-Jump-Game-VII/" rel="prev" title="LeetCode 1871. Jump Game VII">
-      <i class="fa fa-chevron-left"></i> LeetCode 1871. Jump Game VII
+    <a href="/2021/06/14/LeetCode-336-Palindrome-Pairs/" rel="prev" title="LeetCode 336. Palindrome Pairs">
+      <i class="fa fa-chevron-left"></i> LeetCode 336. Palindrome Pairs
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/29/LeetCode-1695-Maximum-Erasure-Value/" rel="next" title="LeetCode 1695. Maximum Erasure Value">
-      LeetCode 1695. Maximum Erasure Value <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -340,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-318-Maximum-Product-of-Word-Lengths"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 318. Maximum Product of Word Lengths</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-1710-Maximum-Units-on-a-Truck"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1710. Maximum Units on a Truck</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
