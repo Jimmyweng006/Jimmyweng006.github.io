@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 968. Binary Tree Cameras https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;binary-tree-cameras&#x2F;  說來慚愧，昨天為了趕OS的作業不小心斷更了QQ，今天努力一次生兩篇！">
+  <meta name="description" content="LeetCode 22. Generate Parentheses https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;generate-parentheses&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 968. Binary Tree Cameras">
-<meta property="og:url" content="http://example.com/2021/05/18/LeetCode-968-Binary-Tree-Cameras/index.html">
+<meta property="og:title" content="LeetCode 22. Generate Parentheses">
+<meta property="og:url" content="http://example.com/2021/06/17/LeetCode-22-Generate-Parentheses/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 968. Binary Tree Cameras https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;binary-tree-cameras&#x2F;  說來慚愧，昨天為了趕OS的作業不小心斷更了QQ，今天努力一次生兩篇！">
+<meta property="og:description" content="LeetCode 22. Generate Parentheses https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;generate-parentheses&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-18T11:24:19.000Z">
-<meta property="article:modified_time" content="2021-05-18T14:26:50.371Z">
+<meta property="article:published_time" content="2021-06-17T12:59:49.000Z">
+<meta property="article:modified_time" content="2021-06-17T13:13:25.465Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="May LeetCoding Challenge 2021">
-<meta property="article:tag" content="Tree">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
+<meta property="article:tag" content="Backtracking">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/05/18/LeetCode-968-Binary-Tree-Cameras/">
+<link rel="canonical" href="http://example.com/2021/06/17/LeetCode-22-Generate-Parentheses/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 968. Binary Tree Cameras | Jimmy's Blog</title>
+  <title>LeetCode 22. Generate Parentheses | Jimmy's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/18/LeetCode-968-Binary-Tree-Cameras/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/17/LeetCode-22-Generate-Parentheses/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 968. Binary Tree Cameras
+          LeetCode 22. Generate Parentheses
         </h1>
 
         <div class="post-meta">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-18 19:24:19 / Modified: 22:26:50" itemprop="dateCreated datePublished" datetime="2021-05-18T19:24:19+08:00">2021-05-18</time>
+              <time title="Created: 2021-06-17 20:59:49 / Modified: 21:13:25" itemprop="dateCreated datePublished" datetime="2021-06-17T20:59:49+08:00">2021-06-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,16 +242,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-968-Binary-Tree-Cameras"><a href="#LeetCode-968-Binary-Tree-Cameras" class="headerlink" title="LeetCode 968. Binary Tree Cameras"></a>LeetCode 968. Binary Tree Cameras</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-cameras/">https://leetcode.com/problems/binary-tree-cameras/</a></p>
+        <h3 id="LeetCode-22-Generate-Parentheses"><a href="#LeetCode-22-Generate-Parentheses" class="headerlink" title="LeetCode 22. Generate Parentheses"></a>LeetCode 22. Generate Parentheses</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/generate-parentheses/">https://leetcode.com/problems/generate-parentheses/</a></p>
 </blockquote>
-<p>說來慚愧，昨天為了趕OS的作業不小心斷更了QQ，今天努力一次生兩篇！</p>
 <span id="more"></span>
 <hr>
-<p>這題也是挺妙的，基本上可以先確定的是，與其在leaf節點上放camera，不如在leaf的parent節點上放，因為這樣能cover的節點比較多，很自然。<br>另外我們這裡是用preorder traversal來處理，這可能是這題最難想到的點吧…不過畢竟也只有三種方式遍歷，多試一下就出來了(?</p>
-<p>之後分別用數字代表當前的節點狀態<br>no camera: 0<br>not need: 1<br>has camera: 2</p>
-<p>if-else判斷條件:<br>1.如果我的左右兩個child有一個0以上，當前的root return 2(擺一個camera)來cover他的child<br>2.如果我的左右兩個child有一個2以上，當前的root return 1(被cover)<br>3.我的左右兩個child都是1(nullptr)，當前的root(leaf節點) return 0(不需要camera)<br>特別注意只有一個node時的edge case，當在main function call的help function回傳0時需要特別處理。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// no camera = 0</span></span><br><span class="line">    <span class="comment">// has camera = 2</span></span><br><span class="line">    <span class="comment">// not need = 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minCameraCover</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">help</span>(root) == <span class="number">0</span>) ans++;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">help</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="built_in">help</span>(root-&gt;left);</span><br><span class="line">        <span class="keyword">int</span> right = <span class="built_in">help</span>(root-&gt;right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left == <span class="number">0</span> || right == <span class="number">0</span>)&#123;</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(left == <span class="number">2</span> || right == <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>經典回溯算法題目，基本上當前要嘛加”(“，不然就是”)”，把tree畫出來就好懂多了(就是個preorder traversal)。那實際要怎麼判斷時機呢？</p>
+<p>左右括號的數量最多各為n，而為了維持正確姓左括號會永遠比右括號多，那基本上就兩個情況，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左括號數量 &gt; 右括號數量且左括號數 &lt; n、左括號數量 &#x3D; 右括號數量 &#x3D;&gt; 加左括號</span><br><span class="line">其他 &#x3D;&gt; 加右括號</span><br><span class="line">最後不要忘了中止條件: 左括號數量 + 右括號數量 &#x3D; 2n，這樣就能正確執行了！</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        vector&lt;string&gt; ans;</span><br><span class="line">        string cur;</span><br><span class="line">        <span class="built_in">dfs</span>(l, r, cur, ans, n);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, string&amp; cur, vector&lt;string&gt;&amp; ans, <span class="keyword">int</span>&amp; n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l + r == <span class="number">2</span> * n)&#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(cur);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; r)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l &lt; n)&#123;</span><br><span class="line">                cur.<span class="built_in">push_back</span>(<span class="string">&#x27;(&#x27;</span>);</span><br><span class="line">                <span class="built_in">dfs</span>(l + <span class="number">1</span>, r, cur, ans, n);</span><br><span class="line">                cur.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            cur.<span class="built_in">push_back</span>(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">            <span class="built_in">dfs</span>(l, r + <span class="number">1</span>, cur, ans, n);</span><br><span class="line">            cur.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">            cur.<span class="built_in">push_back</span>(<span class="string">&#x27;(&#x27;</span>);</span><br><span class="line">            <span class="built_in">dfs</span>(l + <span class="number">1</span>, r, cur, ans, n);</span><br><span class="line">            cur.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -260,8 +259,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
-              <a href="/tags/Tree/" rel="tag"># Tree</a>
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
+              <a href="/tags/Backtracking/" rel="tag"># Backtracking</a>
           </div>
 
         
@@ -270,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/16/LeetCode-65-Valid-Number/" rel="prev" title="LeetCode 65. Valid Number">
-      <i class="fa fa-chevron-left"></i> LeetCode 65. Valid Number
+    <a href="/2021/06/16/LeetCode-473-Matchsticks-to-Square/" rel="prev" title="LeetCode 473. Matchsticks to Square">
+      <i class="fa fa-chevron-left"></i> LeetCode 473. Matchsticks to Square
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/18/LeetCode-1048-Longest-String-Chain/" rel="next" title="LeetCode 1048. Longest String Chain">
-      LeetCode 1048. Longest String Chain <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -335,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-968-Binary-Tree-Cameras"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 968. Binary Tree Cameras</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-22-Generate-Parentheses"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 22. Generate Parentheses</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
