@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 630. Course Schedule III https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;course-schedule-iii&#x2F;  又是一題想不到貪心策略的greedy題冏">
+  <meta name="description" content="LeetCode 307. Range Sum Query - Mutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-mutable&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 630. Course Schedule III">
-<meta property="og:url" content="http://example.com/2021/05/03/LeetCode-630-Course-Schedule-III/index.html">
+<meta property="og:title" content="LeetCode 307. Range Sum Query - Mutable">
+<meta property="og:url" content="http://example.com/2021/06/19/LeetCode-307-Range-Sum-Query-Mutable/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 630. Course Schedule III https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;course-schedule-iii&#x2F;  又是一題想不到貪心策略的greedy題冏">
+<meta property="og:description" content="LeetCode 307. Range Sum Query - Mutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-mutable&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-03T03:03:28.000Z">
-<meta property="article:modified_time" content="2021-05-03T03:24:22.704Z">
+<meta property="article:published_time" content="2021-06-19T09:22:51.000Z">
+<meta property="article:modified_time" content="2021-06-19T09:49:10.560Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="May LeetCoding Challenge 2021">
-<meta property="article:tag" content="Heap">
-<meta property="article:tag" content="Greedy">
+<meta property="article:tag" content="June LeetCoding Challenge 2021">
+<meta property="article:tag" content="Segment Tree">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/05/03/LeetCode-630-Course-Schedule-III/">
+<link rel="canonical" href="http://example.com/2021/06/19/LeetCode-307-Range-Sum-Query-Mutable/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 630. Course Schedule III | Jimmy's Blog</title>
+  <title>LeetCode 307. Range Sum Query - Mutable | Jimmy's Blog</title>
   
 
 
@@ -196,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/03/LeetCode-630-Course-Schedule-III/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/LeetCode-307-Range-Sum-Query-Mutable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -209,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 630. Course Schedule III
+          LeetCode 307. Range Sum Query - Mutable
         </h1>
 
         <div class="post-meta">
@@ -220,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-03 11:03:28 / Modified: 11:24:22" itemprop="dateCreated datePublished" datetime="2021-05-03T11:03:28+08:00">2021-05-03</time>
+              <time title="Created: 2021-06-19 17:22:51 / Modified: 17:49:10" itemprop="dateCreated datePublished" datetime="2021-06-19T17:22:51+08:00">2021-06-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,19 +242,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-630-Course-Schedule-III"><a href="#LeetCode-630-Course-Schedule-III" class="headerlink" title="LeetCode 630. Course Schedule III"></a>LeetCode 630. Course Schedule III</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/course-schedule-iii/">https://leetcode.com/problems/course-schedule-iii/</a></p>
+        <h3 id="LeetCode-307-Range-Sum-Query-Mutable"><a href="#LeetCode-307-Range-Sum-Query-Mutable" class="headerlink" title="LeetCode 307. Range Sum Query - Mutable"></a>LeetCode 307. Range Sum Query - Mutable</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/range-sum-query-mutable/">https://leetcode.com/problems/range-sum-query-mutable/</a></p>
 </blockquote>
-<p>又是一題想不到貪心策略的greedy題冏</p>
 <span id="more"></span>
 <hr>
-<p>這題很直覺的以ending time做排序，因為結束時間越前面的先處理比較不會影響到後面的，蠻合理的嘛(?，然後就是重要的貪心策略！</p>
-<ul>
-<li>當前的課程加進去後，如果全部課程的完成時間，大於目前課程的結束時間，則把pq裡最長的課程換成當前的課程</li>
+<p>趁著今天的題目把這個算是有一定出現頻率的線段樹主題搞一下！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">主要的概念如下，我們將區間以樹來表示，其中每個節點存的資料有區間[start, end]以及區間和info。</span><br><span class="line">                             [0, 9]</span><br><span class="line">              [0, 4]                      [5, 9]</span><br><span class="line">        [0, 2]       [3, 4]         [5, 7]      [8, 9]</span><br><span class="line">    [0, 1] [2, 2] [3, 3] [4, 4] [5, 6] [7, 7] [8, 8] [9, 9]</span><br><span class="line">[0, 0] [1, 1]</span><br></pre></td></tr></table></figure>
+<p>之後要完成三個操作，分別是</p>
+<ol>
+<li>void init(SegTreeNode* node, int a, int b): 建樹。如果區間長度為1則代表到了leaf，直接給nums[a]的值即可return。</li>
+<li>updateSingle(SegTreeNode* node, int idx, int val): 更新單個區間的值。<ul>
+<li>如果idx不在node的區間內直接return</li>
+<li>如果區間長度為1，則代表是要修改的idx，直接修改node的info</li>
+<li>postorder traversal: 當左右子樹都完成後，則當前node的info等於左右子樹info的合</li>
 </ul>
-<p>這樣能保證課程數量不虧(+1後-1)，而且能使總體完成時間縮短！</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">1</span>] &lt; b[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">scheduleCourse</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; courses)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(courses.<span class="built_in">begin</span>(), courses.<span class="built_in">end</span>(), cmp);</span><br><span class="line">        priority_queue&lt;<span class="keyword">int</span>&gt; pq;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; courses.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            cur += courses[i][<span class="number">0</span>];</span><br><span class="line">            pq.<span class="built_in">push</span>(courses[i][<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">if</span>(cur &gt; courses[i][<span class="number">1</span>])&#123;</span><br><span class="line">                cur -= pq.<span class="built_in">top</span>();</span><br><span class="line">                pq.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pq.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+</li>
+<li>qeuryRange(SegTreeNode* node, int a, int b): 查詢區間合。<ul>
+<li>如果查詢的區間跟當前node的區間沒有overlap，return 0</li>
+<li>當前node的區間是查尋區間的子區間，return node-&gt;info</li>
+<li>如果以上都不成立，則繼續遞迴操作</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumArray</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">SegTreeNode</span>&#123;</span></span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">            SegTreeNode* left;</span><br><span class="line">            SegTreeNode* right;</span><br><span class="line">            <span class="keyword">int</span> start, end;</span><br><span class="line">            <span class="keyword">int</span> info;</span><br><span class="line">            <span class="built_in">SegTreeNode</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b):<span class="built_in">start</span>(a),<span class="built_in">end</span>(b),<span class="built_in">info</span>(<span class="number">0</span>),<span class="built_in">left</span>(<span class="literal">nullptr</span>),<span class="built_in">right</span>(<span class="literal">nullptr</span>)&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(SegTreeNode* node, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a == b)&#123;</span><br><span class="line">            node-&gt;info = nums[a];</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (a + b) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;left == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            node-&gt;left = <span class="keyword">new</span> <span class="built_in">SegTreeNode</span>(a, mid);</span><br><span class="line">            node-&gt;right = <span class="keyword">new</span> <span class="built_in">SegTreeNode</span>(mid + <span class="number">1</span>, b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">init</span>(node-&gt;left, a, mid);</span><br><span class="line">        <span class="built_in">init</span>(node-&gt;right, mid + <span class="number">1</span>, b);</span><br><span class="line">        node-&gt;info = node-&gt;left-&gt;info + node-&gt;right-&gt;info;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">updateSingle</span><span class="params">(SegTreeNode* node, <span class="keyword">int</span> idx, <span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(idx &lt; node-&gt;start || idx &gt; node-&gt;end) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(node-&gt;start == node-&gt;end)&#123;</span><br><span class="line">            node-&gt;info = val;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">updateSingle</span>(node-&gt;left, idx, val);</span><br><span class="line">        <span class="built_in">updateSingle</span>(node-&gt;right, idx, val);</span><br><span class="line">        node-&gt;info = node-&gt;left-&gt;info + node-&gt;right-&gt;info;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">qeuryRange</span><span class="params">(SegTreeNode* node, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;end &lt; a || node-&gt;start &gt; b) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(a &lt;= node-&gt;start &amp;&amp; b &gt;= node-&gt;end) <span class="keyword">return</span> node-&gt;info;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">qeuryRange</span>(node-&gt;left, a, b) + <span class="built_in">qeuryRange</span>(node-&gt;right, a, b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    SegTreeNode* root;</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">NumArray</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;nums = nums;</span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        root = <span class="keyword">new</span> <span class="built_in">SegTreeNode</span>(<span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">init</span>(root, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">updateSingle</span>(root, index, val);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">qeuryRange</span>(root, left, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -264,9 +274,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/May-LeetCoding-Challenge-2021/" rel="tag"># May LeetCoding Challenge 2021</a>
-              <a href="/tags/Heap/" rel="tag"># Heap</a>
-              <a href="/tags/Greedy/" rel="tag"># Greedy</a>
+              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
+              <a href="/tags/Segment-Tree/" rel="tag"># Segment Tree</a>
           </div>
 
         
@@ -275,13 +284,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/02/LeetCode-745-Prefix-and-Suffix-Search/" rel="prev" title="LeetCode 745. Prefix and Suffix Search">
-      <i class="fa fa-chevron-left"></i> LeetCode 745. Prefix and Suffix Search
+    <a href="/2021/06/18/LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum/" rel="prev" title="LeetCode 795. Number of Subarrays with Bounded Maximum">
+      <i class="fa fa-chevron-left"></i> LeetCode 795. Number of Subarrays with Bounded Maximum
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/04/LeetCode-1480-Running-Sum-of-1d-Array/" rel="next" title="LeetCode 1480. Running Sum of 1d Array">
-      LeetCode 1480. Running Sum of 1d Array <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -340,7 +346,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-630-Course-Schedule-III"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 630. Course Schedule III</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-307-Range-Sum-Query-Mutable"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 307. Range Sum Query - Mutable</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
