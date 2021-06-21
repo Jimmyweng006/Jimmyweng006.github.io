@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 795. Number of Subarrays with Bounded Maximum https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;number-of-subarrays-with-bounded-maximum&#x2F;  這解法太秀了QQ">
+  <meta name="description" content="LeetCode 1235. Maximum Profit in Job Scheduling https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;maximum-profit-in-job-scheduling&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 795. Number of Subarrays with Bounded Maximum">
-<meta property="og:url" content="http://example.com/2021/06/18/LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum/index.html">
+<meta property="og:title" content="LeetCode 1235. Maximum Profit in Job Scheduling">
+<meta property="og:url" content="http://example.com/2021/06/21/LeetCode-1235-Maximum-Profit-in-Job-Scheduling/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 795. Number of Subarrays with Bounded Maximum https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;number-of-subarrays-with-bounded-maximum&#x2F;  這解法太秀了QQ">
+<meta property="og:description" content="LeetCode 1235. Maximum Profit in Job Scheduling https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;maximum-profit-in-job-scheduling&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-18T13:20:21.000Z">
-<meta property="article:modified_time" content="2021-06-18T13:33:19.594Z">
+<meta property="article:published_time" content="2021-06-21T08:21:45.000Z">
+<meta property="article:modified_time" content="2021-06-21T09:28:26.992Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="June LeetCoding Challenge 2021">
+<meta property="article:tag" content="Greedy">
+<meta property="article:tag" content="Binary Search">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/06/18/LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum/">
+<link rel="canonical" href="http://example.com/2021/06/21/LeetCode-1235-Maximum-Profit-in-Job-Scheduling/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 795. Number of Subarrays with Bounded Maximum | Jimmy's Blog</title>
+  <title>LeetCode 1235. Maximum Profit in Job Scheduling | Jimmy's Blog</title>
   
 
 
@@ -194,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/18/LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/21/LeetCode-1235-Maximum-Profit-in-Job-Scheduling/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 795. Number of Subarrays with Bounded Maximum
+          LeetCode 1235. Maximum Profit in Job Scheduling
         </h1>
 
         <div class="post-meta">
@@ -218,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-18 21:20:21 / Modified: 21:33:19" itemprop="dateCreated datePublished" datetime="2021-06-18T21:20:21+08:00">2021-06-18</time>
+              <time title="Created: 2021-06-21 16:21:45 / Modified: 17:28:26" itemprop="dateCreated datePublished" datetime="2021-06-21T16:21:45+08:00">2021-06-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,15 +242,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum"><a href="#LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum" class="headerlink" title="LeetCode 795. Number of Subarrays with Bounded Maximum"></a>LeetCode 795. Number of Subarrays with Bounded Maximum</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/">https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/</a></p>
+        <h3 id="LeetCode-1235-Maximum-Profit-in-Job-Scheduling"><a href="#LeetCode-1235-Maximum-Profit-in-Job-Scheduling" class="headerlink" title="LeetCode 1235. Maximum Profit in Job Scheduling"></a>LeetCode 1235. Maximum Profit in Job Scheduling</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-profit-in-job-scheduling/">https://leetcode.com/problems/maximum-profit-in-job-scheduling/</a></p>
 </blockquote>
-<p>這解法太秀了QQ</p>
 <span id="more"></span>
 <hr>
-<p>要一次處理左右邊界有點難，我們試著拆成小一點的函數。在這裡我們定義一個新函數int count(bound, nums)，他會回傳在nums裡面有多少subarray的最大值是小於等於bound的。</p>
-<p>那我們原本的答案，就可以拆成count(right) - count(left - 1)啦。那重要的count函式要怎麼寫呢？有點像是數字累加和的概念，如果當前數字小於等於bound，cnt++；否走cnt歸零，之後再累加到ans裡就行了。這樣的寫法清楚模擬出了subarray的數量，真的妙！</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSubarrayBoundedMax</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">count</span>(right, nums) - <span class="built_in">count</span>(left - <span class="number">1</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> bound, vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; x: nums)&#123;</span><br><span class="line">            cnt = x &lt;= bound ? cnt + <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">            ans += cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>與上一題不同的是，這裡是求區間值profit總和要最大，稍微改一下題目難度就不是同一個檔次了QQ</p>
+<p>基本上我們一樣以結束時間早到晚排序。我們定義dp[t]: 到時間點t為止，我的最大profit是多少，其中t的值只會是每個活動的結束時間。</p>
+<p>我們每次在兩個選擇中選大的，</p>
+<ol>
+<li>不做當前的job =&gt; dp[endTime[i]] = dp[endTime[i-1]] (到時間點endTime[i]的最大profit等於上個時間點endTime[i-1]的最大profit)</li>
+<li>做當前的job =&gt; 這又能分成是否可以找到前面承接下來的val<ol>
+<li>dp[endTime[i]] = val + profit[i] (val為小於等於當前endTime[i]的最大profit)</li>
+<li>dp[endTime[i]] = profit[i]</li>
+</ol>
+</li>
+</ol>
+<p>為了找到可以承接下來的val，我們用upper_bound找到大於當前job endTime的時間，如果是begin的話代表在當前job前面，沒有可以接在它前面做的jobs了(沒有job的endTime小於等於當前job的startTime)。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">1</span>] &lt; b[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">jobScheduling</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; startTime, vector&lt;<span class="keyword">int</span>&gt;&amp; endTime, vector&lt;<span class="keyword">int</span>&gt;&amp; profit)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; jobs;</span><br><span class="line">        <span class="keyword">int</span> n = startTime.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            jobs.<span class="built_in">push_back</span>(&#123;startTime[i], endTime[i], profit[i]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(jobs.<span class="built_in">begin</span>(), jobs.<span class="built_in">end</span>(), cmp);</span><br><span class="line"></span><br><span class="line">        map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; dp;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">auto</span> it = dp.<span class="built_in">upper_bound</span>(jobs[i][<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">if</span>(it == dp.<span class="built_in">begin</span>())&#123;</span><br><span class="line">                cur = <span class="built_in">max</span>(cur, jobs[i][<span class="number">2</span>]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                it--;</span><br><span class="line">                cur = <span class="built_in">max</span>(cur, it-&gt;second + jobs[i][<span class="number">2</span>]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            dp[jobs[i][<span class="number">1</span>]] = cur;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, cur);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -258,7 +268,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
+              <a href="/tags/Greedy/" rel="tag"># Greedy</a>
+              <a href="/tags/Binary-Search/" rel="tag"># Binary Search</a>
           </div>
 
         
@@ -267,13 +278,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/17/LeetCode-22-Generate-Parentheses/" rel="prev" title="LeetCode 22. Generate Parentheses">
-      <i class="fa fa-chevron-left"></i> LeetCode 22. Generate Parentheses
+    <a href="/2021/06/21/LeetCode-435-Non-overlapping-Intervals/" rel="prev" title="LeetCode 435. Non-overlapping Intervals">
+      <i class="fa fa-chevron-left"></i> LeetCode 435. Non-overlapping Intervals
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/19/LeetCode-307-Range-Sum-Query-Mutable/" rel="next" title="LeetCode 307. Range Sum Query - Mutable">
-      LeetCode 307. Range Sum Query - Mutable <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -332,7 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-795-Number-of-Subarrays-with-Bounded-Maximum"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 795. Number of Subarrays with Bounded Maximum</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-1235-Maximum-Profit-in-Job-Scheduling"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1235. Maximum Profit in Job Scheduling</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
