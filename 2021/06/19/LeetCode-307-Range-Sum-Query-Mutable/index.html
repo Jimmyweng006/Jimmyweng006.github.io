@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 307. Range Sum Query - Mutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-mutable&#x2F;">
+  <meta name="description" content="LeetCode 307. Range Sum Query - Mutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-mutable&#x2F;   Segment Tree模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 307. Range Sum Query - Mutable">
 <meta property="og:url" content="http://example.com/2021/06/19/LeetCode-307-Range-Sum-Query-Mutable/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 307. Range Sum Query - Mutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-mutable&#x2F;">
+<meta property="og:description" content="LeetCode 307. Range Sum Query - Mutable https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;range-sum-query-mutable&#x2F;   Segment Tree模板">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-19T09:22:51.000Z">
-<meta property="article:modified_time" content="2021-06-19T09:49:10.560Z">
+<meta property="article:modified_time" content="2021-06-27T09:08:13.012Z">
 <meta property="article:author" content="Jimmy_kiet">
 <meta property="article:tag" content="June LeetCoding Challenge 2021">
 <meta property="article:tag" content="Segment Tree">
@@ -217,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-06-19 17:22:51 / Modified: 17:49:10" itemprop="dateCreated datePublished" datetime="2021-06-19T17:22:51+08:00">2021-06-19</time>
+              <time title="Created: 2021-06-19 17:22:51" itemprop="dateCreated datePublished" datetime="2021-06-19T17:22:51+08:00">2021-06-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-27 17:08:13" itemprop="dateModified" datetime="2021-06-27T17:08:13+08:00">2021-06-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -245,7 +251,9 @@
         <h3 id="LeetCode-307-Range-Sum-Query-Mutable"><a href="#LeetCode-307-Range-Sum-Query-Mutable" class="headerlink" title="LeetCode 307. Range Sum Query - Mutable"></a>LeetCode 307. Range Sum Query - Mutable</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/range-sum-query-mutable/">https://leetcode.com/problems/range-sum-query-mutable/</a></p>
 </blockquote>
-<span id="more"></span>
+<ul>
+<li>Segment Tree模板<span id="more"></span></li>
+</ul>
 <hr>
 <p>趁著今天的題目把這個算是有一定出現頻率的線段樹主題搞一下！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">主要的概念如下，我們將區間以樹來表示，其中每個節點存的資料有區間[start, end]以及區間和info。</span><br><span class="line">                             [0, 9]</span><br><span class="line">              [0, 4]                      [5, 9]</span><br><span class="line">        [0, 2]       [3, 4]         [5, 7]      [8, 9]</span><br><span class="line">    [0, 1] [2, 2] [3, 3] [4, 4] [5, 6] [7, 7] [8, 8] [9, 9]</span><br><span class="line">[0, 0] [1, 1]</span><br></pre></td></tr></table></figure>
@@ -363,7 +371,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">73</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -376,7 +384,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
