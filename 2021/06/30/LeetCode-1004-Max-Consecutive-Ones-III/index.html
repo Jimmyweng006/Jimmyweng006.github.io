@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 315. Count of Smaller Numbers After Self https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;count-of-smaller-numbers-after-self&#x2F;   Divide and Conquer經典題">
+  <meta name="description" content="LeetCode 1004. Max Consecutive Ones III https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;max-consecutive-ones-iii&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 315. Count of Smaller Numbers After Self">
-<meta property="og:url" content="http://example.com/2021/06/28/LeetCode-315-Count-of-Smaller-Numbers-After-Self/index.html">
+<meta property="og:title" content="LeetCode 1004. Max Consecutive Ones III">
+<meta property="og:url" content="http://example.com/2021/06/30/LeetCode-1004-Max-Consecutive-Ones-III/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 315. Count of Smaller Numbers After Self https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;count-of-smaller-numbers-after-self&#x2F;   Divide and Conquer經典題">
+<meta property="og:description" content="LeetCode 1004. Max Consecutive Ones III https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;max-consecutive-ones-iii&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-28T07:30:35.000Z">
-<meta property="article:modified_time" content="2021-06-28T13:52:17.359Z">
+<meta property="article:published_time" content="2021-06-30T13:14:28.000Z">
+<meta property="article:modified_time" content="2021-06-30T13:36:49.133Z">
 <meta property="article:author" content="Jimmy_kiet">
+<meta property="article:tag" content="Sliding Window">
 <meta property="article:tag" content="June LeetCoding Challenge 2021">
-<meta property="article:tag" content="Divide and Conquer">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/06/28/LeetCode-315-Count-of-Smaller-Numbers-After-Self/">
+<link rel="canonical" href="http://example.com/2021/06/30/LeetCode-1004-Max-Consecutive-Ones-III/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>LeetCode 315. Count of Smaller Numbers After Self | Jimmy's Blog</title>
+  <title>LeetCode 1004. Max Consecutive Ones III | Jimmy's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/28/LeetCode-315-Count-of-Smaller-Numbers-After-Self/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/30/LeetCode-1004-Max-Consecutive-Ones-III/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 315. Count of Smaller Numbers After Self
+          LeetCode 1004. Max Consecutive Ones III
         </h1>
 
         <div class="post-meta">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-28 15:30:35 / Modified: 21:52:17" itemprop="dateCreated datePublished" datetime="2021-06-28T15:30:35+08:00">2021-06-28</time>
+              <time title="Created: 2021-06-30 21:14:28 / Modified: 21:36:49" itemprop="dateCreated datePublished" datetime="2021-06-30T21:14:28+08:00">2021-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,17 +242,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-315-Count-of-Smaller-Numbers-After-Self"><a href="#LeetCode-315-Count-of-Smaller-Numbers-After-Self" class="headerlink" title="LeetCode 315. Count of Smaller Numbers After Self"></a>LeetCode 315. Count of Smaller Numbers After Self</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/">https://leetcode.com/problems/count-of-smaller-numbers-after-self/</a></p>
+        <h3 id="LeetCode-1004-Max-Consecutive-Ones-III"><a href="#LeetCode-1004-Max-Consecutive-Ones-III" class="headerlink" title="LeetCode 1004. Max Consecutive Ones III"></a>LeetCode 1004. Max Consecutive Ones III</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/max-consecutive-ones-iii/">https://leetcode.com/problems/max-consecutive-ones-iii/</a></p>
 </blockquote>
-<ul>
-<li>Divide and Conquer經典題<span id="more"></span></li>
-</ul>
+<span id="more"></span>
 <hr>
-<p>就跟經典的Divde and Conquer演算法merge sort很像，遇到大問題不會？那就拆到最小單位為止(Divide)。</p>
-<p>Conquer比較麻煩一些，我們需要根據當前區間的右半邊(m + 1 ~ r + 1(左閉右開)，已經是sorted狀態)，用lower_bound決定我們的位置以求出當前的數(num[i])大於幾個數。</p>
-<p>讓當前的區間是sorted狀態可以直接call sort(TC: nlgn*lgn)，或是用merge sort裡merge的方法(TC: nlgn)，奇怪的是後者的運行時間還比較慢…</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; count;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">countSmaller</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        count = vector&lt;<span class="keyword">int</span>&gt; (n);</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; sorted = nums;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">helper</span>(nums, sorted, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, vector&lt;<span class="keyword">int</span>&gt;&amp; sorted, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">helper</span>(nums, sorted, l, m);</span><br><span class="line">        <span class="built_in">helper</span>(nums, sorted, m + <span class="number">1</span>, r);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = l; i &lt;= m; i++)&#123;</span><br><span class="line">            <span class="keyword">auto</span> it = <span class="built_in">lower_bound</span>(sorted.<span class="built_in">begin</span>() + m + <span class="number">1</span>, sorted.<span class="built_in">begin</span>() + r + <span class="number">1</span>, nums[i]);</span><br><span class="line">            count[i] += it - (sorted.<span class="built_in">begin</span>() + m + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// sort(sorted.begin() + l, sorted.begin() + r + 1);</span></span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">merge</span><span class="params">(r - l + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = m + <span class="number">1</span>, p = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(i &lt;= m &amp;&amp; j &lt;= r)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sorted[i] &lt;= sorted[j])&#123;</span><br><span class="line">                merge[p] = sorted[i];</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                merge[p] = sorted[j];</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i &lt;= m)&#123;</span><br><span class="line">            merge[p] = sorted[i];</span><br><span class="line">            i++;</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(j &lt;= r)&#123;</span><br><span class="line">            merge[p] = sorted[j];</span><br><span class="line">            j++;</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; r - l + <span class="number">1</span>; i++)&#123;</span><br><span class="line">            sorted[i + l] = merge[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>這題是問最多反轉k次的情況下，求最長的連續1的長度為何？基本上等同於問不超過k個0的最長的連續1的長度為何？沒想到這邊的話可能很難寫出來吧…</p>
+<p>substring問題先來試試sliding window解法，基本上就是遇到nums[r] == 0就先記起來(cnt++)，如果cnt超過k則當nums[l] == 0的時候去掉cnt。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestOnes</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; nums.<span class="built_in">size</span>(); r++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[r] == <span class="number">0</span>) cnt++;</span><br><span class="line">            <span class="keyword">while</span>(cnt &gt; k)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[l++] == <span class="number">0</span>) cnt--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, r - l + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -261,8 +258,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/Sliding-Window/" rel="tag"># Sliding Window</a>
               <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
-              <a href="/tags/Divide-and-Conquer/" rel="tag"># Divide and Conquer</a>
           </div>
 
         
@@ -271,13 +268,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/26/LeetCode-684-Redundant-Connection/" rel="prev" title="LeetCode 684. Redundant Connection">
-      <i class="fa fa-chevron-left"></i> LeetCode 684. Redundant Connection
+    <a href="/2021/06/29/LeetCode-1047-Remove-All-Adjacent-Duplicates-In-String/" rel="prev" title="LeetCode 1047. Remove All Adjacent Duplicates In String">
+      <i class="fa fa-chevron-left"></i> LeetCode 1047. Remove All Adjacent Duplicates In String
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/28/LeetCode-135-Candy/" rel="next" title="LeetCode 135. Candy">
-      LeetCode 135. Candy <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -336,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-315-Count-of-Smaller-Numbers-After-Self"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 315. Count of Smaller Numbers After Self</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-1004-Max-Consecutive-Ones-III"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1004. Max Consecutive Ones III</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
