@@ -20,21 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="LeetCode 336. Palindrome Pairs https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;palindrome-pairs&#x2F;">
+  <meta name="description" content="LeetCode 1338. Reduce Array Size to The Half https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;reduce-array-size-to-the-half&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 336. Palindrome Pairs">
-<meta property="og:url" content="http://example.com/2021/06/14/LeetCode-336-Palindrome-Pairs/index.html">
+<meta property="og:title" content="LeetCode 1338. Reduce Array Size to The Half">
+<meta property="og:url" content="http://example.com/2021/07/07/LeetCode-1338-Reduce-Array-Size-to-The-Half/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Blog">
-<meta property="og:description" content="LeetCode 336. Palindrome Pairs https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;palindrome-pairs&#x2F;">
+<meta property="og:description" content="LeetCode 1338. Reduce Array Size to The Half https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;reduce-array-size-to-the-half&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-14T12:37:35.000Z">
-<meta property="article:modified_time" content="2021-06-14T13:04:44.009Z">
+<meta property="article:published_time" content="2021-07-07T12:15:05.000Z">
+<meta property="article:modified_time" content="2021-07-07T12:30:25.955Z">
 <meta property="article:author" content="Jimmy_kiet">
-<meta property="article:tag" content="June LeetCoding Challenge 2021">
-<meta property="article:tag" content="HashMap">
+<meta property="article:tag" content="July LeetCoding Challenge 2021">
+<meta property="article:tag" content="Greedy">
+<meta property="article:tag" content="Heap">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/06/14/LeetCode-336-Palindrome-Pairs/">
+<link rel="canonical" href="http://example.com/2021/07/07/LeetCode-1338-Reduce-Array-Size-to-The-Half/">
 
 
 <script id="page-configurations">
@@ -47,7 +48,7 @@
   };
 </script>
 
-  <title>LeetCode 336. Palindrome Pairs | Jimmy's Blog</title>
+  <title>LeetCode 1338. Reduce Array Size to The Half | Jimmy's Blog</title>
   
 
 
@@ -195,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/14/LeetCode-336-Palindrome-Pairs/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/07/LeetCode-1338-Reduce-Array-Size-to-The-Half/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 336. Palindrome Pairs
+          LeetCode 1338. Reduce Array Size to The Half
         </h1>
 
         <div class="post-meta">
@@ -219,7 +220,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-14 20:37:35 / Modified: 21:04:44" itemprop="dateCreated datePublished" datetime="2021-06-14T20:37:35+08:00">2021-06-14</time>
+              <time title="Created: 2021-07-07 20:15:05 / Modified: 20:30:25" itemprop="dateCreated datePublished" datetime="2021-07-07T20:15:05+08:00">2021-07-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,15 +243,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="LeetCode-336-Palindrome-Pairs"><a href="#LeetCode-336-Palindrome-Pairs" class="headerlink" title="LeetCode 336. Palindrome Pairs"></a>LeetCode 336. Palindrome Pairs</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-pairs/">https://leetcode.com/problems/palindrome-pairs/</a></p>
+        <h3 id="LeetCode-1338-Reduce-Array-Size-to-The-Half"><a href="#LeetCode-1338-Reduce-Array-Size-to-The-Half" class="headerlink" title="LeetCode 1338. Reduce Array Size to The Half"></a>LeetCode 1338. Reduce Array Size to The Half</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reduce-array-size-to-the-half/">https://leetcode.com/problems/reduce-array-size-to-the-half/</a></p>
 </blockquote>
 <span id="more"></span>
 <hr>
-<p>如何高效的找出有沒有word能跟當前的word湊成palindrome是本題的核心操作，我們可以這樣想，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">對於一個給定的word(s)，s可以拆成s1, s2(s &#x3D; s1 + s2)</span><br><span class="line">如果我們知道s1是palindrome，那只要看看能不能找到s2的reverse(s2&#39;)，就能弄出s2&#39;s1s2的palindrome了</span><br><span class="line">如果我們知道s2是palindrome，那只要看看能不能找到s1的reverse(s1&#39;)，就能弄出s1s2s1&#39;的palindrome了</span><br></pre></td></tr></table></figure>
-<p>最後為了方便起見，我們依照word的長度小到大處理，並且每處理一個word後才會放到查找的set裡(不是一開始就放)以避免重複。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(string&amp; a, string&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a.<span class="built_in">size</span>() &lt; b.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">palindromePairs</span>(vector&lt;string&gt;&amp; words) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; ans;</span><br><span class="line">        unordered_set&lt;string&gt; all;</span><br><span class="line">        unordered_map&lt;string, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">int</span> n = words.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            m[words[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">sort</span>(words.<span class="built_in">begin</span>(), words.<span class="built_in">end</span>(), cmp);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            string s = words[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= s.<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                string s1 = s.<span class="built_in">substr</span>(<span class="number">0</span>, j);</span><br><span class="line">                string s2 = s.<span class="built_in">substr</span>(j);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">isPal</span>(s1))&#123;</span><br><span class="line">                    string temp = s2;</span><br><span class="line">                    <span class="built_in">reverse</span>(temp.<span class="built_in">begin</span>(), temp.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span>(all.<span class="built_in">find</span>(temp) != all.<span class="built_in">end</span>())&#123;</span><br><span class="line">                        ans.<span class="built_in">push_back</span>(&#123;m[temp], m[s]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">isPal</span>(s2))&#123;</span><br><span class="line">                    string temp = s1;</span><br><span class="line">                    <span class="built_in">reverse</span>(temp.<span class="built_in">begin</span>(), temp.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span>(all.<span class="built_in">find</span>(temp) != all.<span class="built_in">end</span>())&#123;</span><br><span class="line">                        ans.<span class="built_in">push_back</span>(&#123;m[s], m[temp]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            all.<span class="built_in">insert</span>(words[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPal</span><span class="params">(string&amp; s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i++] != s[j--]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>基本上就是greedy的把出現次數最多的元素依序除掉，直到arr size小於等於原本的一半為止。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minSetSize</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = arr.<span class="built_in">size</span>();</span><br><span class="line">        priority_queue&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;&gt; pq;</span><br><span class="line">        <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] != arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">                pq.<span class="built_in">push</span>(&#123;cur, arr[i]&#125;);</span><br><span class="line">                cur = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                cur++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        pq.<span class="built_in">push</span>(&#123;cur, arr[n<span class="number">-1</span>]&#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, curSize = n;</span><br><span class="line">        <span class="keyword">while</span>(pq.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">auto</span> cur = pq.<span class="built_in">top</span>();</span><br><span class="line">            pq.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">            ans++;</span><br><span class="line">            curSize -= cur.first;</span><br><span class="line">            <span class="keyword">if</span>(curSize &lt;= n / <span class="number">2</span>) <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -259,8 +258,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/June-LeetCoding-Challenge-2021/" rel="tag"># June LeetCoding Challenge 2021</a>
-              <a href="/tags/HashMap/" rel="tag"># HashMap</a>
+              <a href="/tags/July-LeetCoding-Challenge-2021/" rel="tag"># July LeetCoding Challenge 2021</a>
+              <a href="/tags/Greedy/" rel="tag"># Greedy</a>
+              <a href="/tags/Heap/" rel="tag"># Heap</a>
           </div>
 
         
@@ -269,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/13/LeetCode-871-Minimum-Number-of-Refueling-Stops/" rel="prev" title="LeetCode 871. Minimum Number of Refueling Stops">
-      <i class="fa fa-chevron-left"></i> LeetCode 871. Minimum Number of Refueling Stops
+    <a href="/2021/07/06/LeetCode-566-Reshape-the-Matrix/" rel="prev" title="LeetCode 566. Reshape the Matrix">
+      <i class="fa fa-chevron-left"></i> LeetCode 566. Reshape the Matrix
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/15/LeetCode-1710-Maximum-Units-on-a-Truck/" rel="next" title="LeetCode 1710. Maximum Units on a Truck">
-      LeetCode 1710. Maximum Units on a Truck <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -334,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-336-Palindrome-Pairs"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 336. Palindrome Pairs</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-1338-Reduce-Array-Size-to-The-Half"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1338. Reduce Array Size to The Half</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
