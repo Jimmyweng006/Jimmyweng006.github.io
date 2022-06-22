@@ -1,6 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+draft: false
+tags: []
+categories: []
+author: "Jimmy_kiet"
+isCJKLanguage: true
 ---
 

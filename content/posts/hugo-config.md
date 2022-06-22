@@ -28,7 +28,9 @@ $ hugo server -D
 ## CI/CD
 
 不知道為什麼照別人的文章步驟去走總是有一些問題，
-直到我照著這個影片的說明走完後CD才會正常，分享給大家參考[影片](https://www.youtube.com/watch?v=psyz4UPnGAA)。
+直到我照著這個[影片](https://www.youtube.com/watch?v=psyz4UPnGAA)的說明走完後CD才會正常，分享給大家參考。
+
+我的作法跟影片中有一點不同的地方在於，我的repo是username.github.io，所以會自動執行pages build and deployment這個action。
 ## Reference
 
 [posts template](https://jimmylin212.github.io/post/0004_hugo_other_and_cheat_sheet/)
