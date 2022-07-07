@@ -56,7 +56,7 @@ isCJKLanguage: true
     ```
     User Space    |    Kernel Space         |    Outside Space
             (1) ->     (2)            (4) ->
-    user cache    |    kernel read cache    |    disk
+    user cache    |    kernel cache         |    disk
                    <- (3,6)                  <- (5) 
     user cache    |    socket cache         |    network
             (7) -> <- (8)             (9) ->
@@ -76,6 +76,41 @@ isCJKLanguage: true
 * Zero Copy Implement:
     1. mmap(Memory-Mapped) + write: (3, 6)原本會回傳資料本身，現在改回傳**資料在kernel cache的位置**，之後再用write把位置上的資料傳到網路。
     2. sendfile: 流程跟Concept描述的差不多。
+
+### Stream
+
+* 傳統資料傳輸問題: 如同上一個主題I/O所提到的，(3 or 6)會將kernel cache的資料直接copy到user cache。但如果現在資料太大呢(10GB)？一次複製就要把這麼大的資料放到cache裡肯定是要爆的。
+* Stream: 那其實只要每次傳輸的量不要那麼大(100MB)，基本就能解決上述問題了。
+* IPC(InterProcess Communication): process與process之間傳輸資料的方式
+    1. Process A將自己cache的資料copy到kernel cache裡
+    2. kernel再將資料copy到Process B的cache裡
+    * 既然這邊也是在做copy資料的操作，自然也可以應用Stream的概念囉。
+
+### Reactor
+
+* 非阻塞I/O(應用層的I/O操作，不會把process給阻塞住)
+* 傳統I/O
+    * 方式: 一個client請求，就有一個process處理。
+    * 問題: 大量的requests同時進來的話，沒辦法創造那麼多個process去處理。
+    * 為何需要那麼多process:
+    ```
+    從網路讀取資料後存到memory的過程:
+        User Space    |    Kernel Space         |    Outside Space
+                (1) ->     (2)            (4) ->
+        user cache    |    kernel cache         |       Network
+                    <- (3,6)                  <- (5) 
+    當process A執行到步驟(2)，如果read()的時候kernel cache是空的，那就沒有其他辦法，
+    process A只能等了，那同時也會執行context switch去執行其他process。只有當kernel cache
+    的資料到了後，才會context switch回process A繼續執行。
+    ```
+* 非阻塞I/O - Reactor
+    * 使用到I/O多路復用(Multiplexing): 在linux是使用了epoll這個技術
+    * 方式: 有事件發生時(有資料可以讀、新的連線等等)，就會有指定的handler處理。
+    * 注意: 如果主要是CPU使用量大的requests，使用reactor沒有比較好，因為會把process阻塞住。
+* 總結
+    * 系統I/O使用量大 -> reactor
+    * 系統CPU使用量大 -> multiprocess/multithread
+
 ## System Design
 
 * 最近蠻紅的[資源](https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw)，內容算好吸收，分享給大家：）
@@ -116,3 +151,7 @@ isCJKLanguage: true
 ### I/O related
 
 [Zero-Copy](https://mark-lin.com/posts/20190905/)
+
+[Stream](https://mark-lin.com/posts/20190906/)
+
+[Reactor](https://mark-lin.com/posts/20190907/)
