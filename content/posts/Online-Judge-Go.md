@@ -121,7 +121,7 @@ if err != nil {
 
 ## Day 9
 
-今天主要在處理RESTful apis如何使用orm來去跟資料庫互動。
+> 今天主要在處理RESTful apis如何使用orm來去跟資料庫互動。
 
 * ORM: 程式跟資料庫之間的橋樑
 * 優點:
@@ -217,6 +217,33 @@ for rows.Next() {
 }
 ```
 
+## Day 10
+
+休息了一個禮拜要回來動工啦><
+
+> 建立會員系統與登入登出機制(Session-Based)
+
+### 會員系統
+
+雜湊演算法有著不可逆的特性，很適合拿來加密使用者的密碼，這裡選擇使用SHA-256。
+
+### 登入登出機制
+
+登入成功 -> server紀錄這個登入狀態，~~也就是session {userId, authority}~~ -> 之後的request會在http header裡的cookie
+帶上session id給server驗證。
+
+上面記錄登入狀態的部分有點理解錯誤，server只會紀錄 {userKey(固定的string), userId}這樣而已，也就是對應到這段code
+```
+session.Set(userKey, userId)。
+```
+authority的部分就等下個章節來處理。
+
+* Wanted to override status code 400 with 200
+
+在transaction裡面使用Abort，也只會停止執行接下來的middleware，不會讓整個handler結束，就會導致上述的問題。
+
+最後用了個dbError的變數暴力解決這個問題了哈哈。
+
 ## Reference
 
 [go-module](https://geektutu.com/post/quick-golang.html)
@@ -229,5 +256,11 @@ for rows.Next() {
 
 [orm](https://ithelp.ithome.com.tw/articles/10207752)
 
+[gorm-tags](https://www.cnblogs.com/zisefeizhu/p/12788017.html)
+
 [iterate on query result](https://gorm.io/docs/advanced_query.html#Iteration)
+
+[go-sha256](https://stackoverflow.com/questions/30956244/golang-base64-encoded-sha256-digest-of-the-user-s-password)
+
+[gin-session](https://github.com/Depado/gin-auth-example/blob/master/main.go)
 
