@@ -10,11 +10,11 @@ isCJKLanguage: true
 
 ## 前言
 
-不想每次面試的時候像是背八股文般地去準備，所以還是花些時間好好吸收，整理成自己的知識吧...
+因為不想每次面試的時候像是背八股文般地去準備，所以還是花些時間好好吸收，整理成自己的知識吧...
 
 這篇提及的內容主要依照此[文章](https://visonli.medium.com/%E6%89%BE%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97-%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB-cfa2db407f0a)提到的東西為主，秉持著貴精不貴多的精神來好好學習吧：）
 
-## OS
+## Operating System
 
 ### Program & Process & Thread & Process/Thread pool
 
@@ -88,21 +88,38 @@ isCJKLanguage: true
 
 ### Reactor
 
-* 非阻塞I/O(應用層的I/O操作，不會把process給阻塞住)
-* 傳統I/O
-    * 方式: 一個client請求，就有一個process處理。
-    * 問題: 大量的requests同時進來的話，沒辦法創造那麼多個process去處理。
-    * 為何需要那麼多process:
+* Blocking I/O
+    * 定義: OS提供的read()是阻塞的，也就是需要真的讀到資料後thread才會繼續往下執行。
+    * 應用層的處理方式: 一個client請求，就給它一個thread去處理。
+    * 問題: 大量的requests同時進來的話，沒辦法創造那麼多個thread去處理。
+    * 為何需要那麼多thread:
     ```
     從網路讀取資料後存到memory的過程:
         User Space    |    Kernel Space         |    Outside Space
                 (1) ->     (2)            (4) ->
         user cache    |    kernel cache         |       Network
                     <- (3,6)                  <- (5) 
-    當process A執行到步驟(2)，如果read()的時候kernel cache是空的，那就沒有其他辦法，
-    process A只能等了，那同時也會執行context switch去執行其他process。只有當kernel cache
-    的資料到了後，才會context switch回process A繼續執行。
+    當thread A執行到步驟(2)，如果read()的時候kernel cache是空的，那就沒有其他辦法，
+    thread A只能等了，那同時也會執行context switch去執行其他thread。
+    只有當資料到了kernel cache後，才會context switch回thread A繼續執行。
     ```
+* Non-Blocking I/O
+    * 定義: OS提供的read()不是阻塞的，當資料還沒到達kernel cache時，會直接返回-1。
+    * 問題: 資料從kernel cache到user cache這段還是阻塞的。
+* Multiplxing I/O
+    * naive的做法: 一個client connection對應到一個fd(file descriptor)，把fd都放到array裡面。
+    然後輪詢這些fd，如果read()返回的不是-1，就代表資料就緒了。
+    * 問題: 但是這樣會有很多無謂的system call(read()返回-1)，user space跟kernel space的context switch也很頻繁。
+    * select: OS提供的system call，由OS在kernel space檢查fd的狀態。再返回就緒的fd給user space做read()。
+    這樣的開銷是select(1 system call) + nready fd(n system call)
+    * poll: select的進階版，監聽的fd數量變多。
+    * epoll: 針對select的三個地方改進。
+        1. 每次需要傳入fd array的copy -> kernel有一份fd的集合，每次只需告訴kernel有變更的fd即可。
+        2. 輪詢(同步)找到就緒的fd -> 異步喚醒就緒的fd
+        3. user space遍歷整個fd array找到就緒的fd -> kernel只返回就緒的fd給user
+    * 一個thread監聽多個fd: 這個特性在naive的作法也能達成，但是會多很多無謂的system call。
+    * 結論: 從原本的一個connection就有一個thread；到用一個thread監聽多個fd，等到有fd就緒後再另外開thread去執行。
+    這樣就能應付一般的高併發場景了吧（？
 * 非阻塞I/O - Reactor
     * 使用到I/O多路復用(Multiplexing): 在linux是使用了epoll這個技術
     * 方式: 有事件發生時(有資料可以讀、新的連線等等)，就會有指定的handler處理。
@@ -110,6 +127,44 @@ isCJKLanguage: true
 * 總結
     * 系統I/O使用量大 -> reactor
     * 系統CPU使用量大 -> multiprocess/multithread
+
+## Computer Network
+
+### OSI 物理層、資料連結層、網路層
+
+* MAC Address(Media Access Control Address): 有網路卡的設備都會有一個唯一的MAC address。
+* IP Address: 32 bit長度，會分成四個區塊，通常以10進位表示。e.q. 192.168.0.1
+* Subnetwork: 同一個sub network的設備傳輸packet時，會把packet交給交換器；不同的話會交給Default Gateway。
+    * Subnet mask: 來源IP跟目標IP去跟來源IP的Subnet mask做"&"操作後，得出的結果相同則代表是在同一個子網路。
+    * 不同子網路的傳輸需要透過router，router的IP在每一台設備上會被設定為Default Gateway。
+    * 192.168.0.1 (255.255.255.0) 可以表示成 192.168.0.1/24，也就是IP為 192.168.0.xxx 的都屬於同一個子網域。
+* MAC address table: for switch(交換機)。紀錄著MAC地址與端口的對應。
+* Route table: for router(路由器)。紀錄著IP地址與端口的對應。 IP: 192.168.0.1/24 <-> port: 1
+* ARP(Address Resolution Protocol) table: for computer and router。記錄著IP地址與MAC地址的對應。
+* 總結：
+```
+當A要跟F溝通時: A(192.168.0.1), F(192.168.2.2)
+
+1. 透過與Subnet mask做"&"計算得出是否在同一個Subnetwork
+2. 不同Subnetwork -> A 透過ARP 得到Default Gateway的MAC address。
+
+3. A把原本的packet包上Data-Link Header(MAC address)跟Network Header(IP address)，丟到switch
+4. switch找到這個MAC address對應的port然後丟出去
+5. 此時router1接收到這個packet，發現這個packet的IP address對應到route table有下一跳
+6. 中間省略，就是一直跳到有一個port能把packet丟出去為止
+
+7. router2把這個packet的IP address對應到一個port
+8. router2同時也透過ARP table找到這個IP address對應的MAC address
+9. switch3收到後，把packet從MAC address對應的port發出去
+10. F收到packet且packet的MAC address與自己的相符，大功告成！
+
+上面3~6的步驟對應了OSI layer 7 ~ 5(bottom-up)
+上面7~10的步驟對應了OSI layer 5 ~ 7(top-down)
+這過程中MAC address會不斷變化，而IP address不會。
+
+透過 switch(Data-Link Layer) -> router(Network Layer)的幫助，
+只要有兩台機器的IP address，就能將他們相連了，可喜可賀！
+```
 
 ## System Design
 
@@ -154,4 +209,10 @@ isCJKLanguage: true
 
 [Stream](https://mark-lin.com/posts/20190906/)
 
+[Blocking/Non-Blocking/Multiplxing I/O](https://mp.weixin.qq.com/s?__biz=Mzk0MjE3NDE0Ng==&mid=2247494866&idx=1&sn=0ebeb60dbc1fd7f9473943df7ce5fd95&chksm=c2c5967ff5b21f69030636334f6a5a7dc52c0f4de9b668f7bac15b2c1a2660ae533dd9878c7c&scene=178&cur_album_id=1700901576128643073#rd)
+
 [Reactor](https://mark-lin.com/posts/20190907/)
+
+### Network related
+
+[OSI 物理層、資料連結層、網路層](https://mp.weixin.qq.com/s/jiPMUk6zUdOY6eKxAjNDbQ)
