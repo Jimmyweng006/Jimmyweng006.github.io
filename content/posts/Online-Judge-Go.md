@@ -244,6 +244,20 @@ authority的部分就等下個章節來處理。
 
 最後用了個dbError的變數暴力解決這個問題了哈哈。
 
+## Day 11
+
+> submission API
+
+來還之前的技術債囉，session現在要存放{userKry, UserIdAuthorityPrincipal}
+
+* securecookie: error - caused by: securecookie: error - caused by: gob: type not registered for interface:
+
+看來只是一些[encode問題](https://github.com/gin-contrib/sessions/issues/39)
+
+* cannot use session.Get(userKey) (type interface {}) as type UserIdAuthorityPrincipal in assignment: need type assertion
+
+用到了[type assertion](https://go.dev/tour/methods/15)
+
 ## Reference
 
 [go-module](https://geektutu.com/post/quick-golang.html)
