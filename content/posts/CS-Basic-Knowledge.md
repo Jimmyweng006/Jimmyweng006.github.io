@@ -166,6 +166,44 @@ isCJKLanguage: true
 只要有兩台機器的IP address，就能將他們相連了，可喜可賀！
 ```
 
+### OSI 傳輸層
+
+原本是電腦之間傳輸封包，但因為現在有很多process運行在電腦上。
+如果還是只有前三層的功能的話，我們不知道傳過來的封包具體要給哪個process。
+
+這個時候就輪到port登場了，給每個process一個unique的port，然後封包上再加上來源port跟目標port，
+這樣就不會有不知道要把封包給哪個process的問題啦。
+
+* 丟包問題: A一次丟n個封包給B，B需要回n個ack包給A，A才會繼續下一輪的傳送。
+* 順序問題: A發送的封包順序可能跟B接收到的封包順序不同。
+    * 解決方法: 給B發送的封包序號(seq)，假設為x，而回傳回來的ack包也要有序號，則為x + 1。
+    x + 1代表著前面x個封包(seq <= x的封包)都已經收到了，接下來要收到第x + 1這個序號的封包。
+* 流量問題: A發送給B封包，如果發送的量超過B可以接受的量(這裡應該是指kernel cache)就會爆掉
+    * 解決方法: 現在封包不僅有seq，還有win(窗口大小)表示傳送方的接收封包能力
+    * three pointer
+    ```
+    l: 收到的最後一個確認號(seq = 3開始的封包還沒確認)
+    r: window upper bound = l + win
+    k: 已發送的最後一個封包的seq(下一個要發送的封包seq = k + 1)
+    2   3   4   5   6   7   
+            k
+    l                   r
+    ```
+    * win值變化
+        * 變大: r變大，窗口就相對變大了。
+        * 變小: r不變，也不繼續發封包，而是等新的ack包回來(l變大)，窗口就相對變小了。
+* 壅塞問題: 跟流量問題相似，但是這邊是跟網路環境壅不壅塞有關。不像上面的流量問題會有接收方告知win值，網路環境無法告訴A，需要由A判斷win值。
+    * 基本判斷: 窗口大小 = min(壅塞控制窗口大小, 流量控制窗口大小)。因為總是受限於比較弱的那方。
+* 連接問題: 如果接收方處於無法接收的狀態就開始送封包，這樣也只是浪費而已。
+    * TCP與UDP的差別: 連接/非連接，可靠/不可靠(丟包問題)。
+    * 三次握手建立連接: sync(client) -> ack + sync(server) -> ack(client)
+        * 為何是三次不是兩次: server需要最後一個ack包來確認連接已建立
+    * 數據傳輸: 將數據切成一段一段的byte，每一段有自己的seq。
+        * sync message = 序號(seq) + 長度 + 資料
+        * ack message = 序號(seq) + 長度
+    * 四次揮手斷開連接: fin(client) -> ack(server) -> fin(server) -> ack(client), 此時client等待一段時間後關閉
+        * 為何client最後需要等待後再關閉: 最後的ack如果沒有送達server，server可以重發fin，然後client會重發ack再重新等待。所以如果沒有這個機制的話，也就是client發完最後一個ack就直接關閉，那就沒有補發的機會了！
+
 ## System Design
 
 * 最近蠻紅的[資源](https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw)，內容算好吸收，分享給大家：）
@@ -216,3 +254,7 @@ isCJKLanguage: true
 ### Network related
 
 [OSI 物理層、資料連結層、網路層](https://mp.weixin.qq.com/s/jiPMUk6zUdOY6eKxAjNDbQ)
+
+[OSI 傳輸層](https://mp.weixin.qq.com/s?__biz=Mzk0MjE3NDE0Ng==&mid=2247491962&idx=1&sn=aa4414483edaba487c080e91ad0efb93&chksm=c2c59bd7f5b212c12231394c585f3b063b0b2d5b05d6f05fddccdb4e856875e7ee1127bb30a7&scene=178&cur_album_id=1700901576128643073#rd)
+
+[TCP vs UDP](https://www.youtube.com/watch?v=Iuvjwrm_O5g)
