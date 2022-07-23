@@ -258,6 +258,58 @@ authority的部分就等下個章節來處理。
 
 用到了[type assertion](https://go.dev/tour/methods/15)
 
+## Day 12
+
+內容跟[這裡](https://jimmyweng006.github.io/posts/online-judge/#day-12)相同。
+
+## Day 13
+
+> 定義ISubmissionSource, ICompiler, IExecutor
+
+> Dependency Injection，利用依賴 interface 來輕鬆替換掉裡面的實作改變程式行為，但是卻不用動到整個程式的架構程式碼。
+
+> Architecture
+
+```
+            main.go(submissionSource, Judger)
+        /                                       \
+    ISubmissionSource                        Judger
+1. ISubmissionSource(FileSubmissionSource, DatabaseSubmissionSource)
+    1-1. functions: getNextSubmission(), setSubmissionResult()
+2. Judger:
+    2-1. components: ICompiler(KotlinCompiler), IExecutor(JVMExecutor)
+```
+
+### [Interface](https://blog.kennycoder.io/2020/02/03/Golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3interface%E5%B8%B8%E8%A6%8B%E7%94%A8%E6%B3%95/)
+
+### Enum
+
+[iota](https://www.educative.io/answers/what-is-an-enum-in-golang)
+
+[implement func (r Result) String() string {}](https://stackoverflow.com/questions/41480543/how-to-make-go-print-enum-fields-as-string)
+
+printf("%v")的結果怪怪的，原來是enum還要implement func (r Result) String() string {}這個方法
+
+### [File](https://zetcode.com/golang/writefile/)
+
+### [在程式內執行Command Line](https://zetcode.com/golang/exec-command/)
+
+### 將執行Command Line時會有的輸入輸出重新導向到文件
+
+> 如果直接執行的話，它就會等待我們使用鍵盤輸入內容進去，並且將結果印在螢幕上
+
+[StdinPipe](https://pkg.go.dev/os/exec#Cmd.StdinPipe)
+
+[read from StdoutPipe](https://stackoverflow.com/questions/46723308/streaming-exec-command-stdoutpipe)
+
+### cannot use tempCompiler (variable of type *KotlinCompiler) as *ICompiler value in struct literal
+
+怪了KotlinCompiler這個struct已經implement ICompiler這個interface了啊...
+
+看了[說明](https://stackoverflow.com/questions/13511203/why-cant-i-assign-a-struct-to-an-interface)但還是有點confuse...
+
+
+
 ## Reference
 
 [go-module](https://geektutu.com/post/quick-golang.html)
