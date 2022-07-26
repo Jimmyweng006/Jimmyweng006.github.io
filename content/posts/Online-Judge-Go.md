@@ -278,6 +278,7 @@ authority的部分就等下個章節來處理。
     1-1. functions: getNextSubmission(), setSubmissionResult()
 2. Judger:
     2-1. components: ICompiler(KotlinCompiler), IExecutor(JVMExecutor)
+    2-2. functions: compile(), execute()
 ```
 
 ### [Interface](https://blog.kennycoder.io/2020/02/03/Golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3interface%E5%B8%B8%E8%A6%8B%E7%94%A8%E6%B3%95/)
@@ -308,7 +309,70 @@ printf("%v")的結果怪怪的，原來是enum還要implement func (r Result) St
 
 看了[說明](https://stackoverflow.com/questions/13511203/why-cant-i-assign-a-struct-to-an-interface)但還是有點confuse...
 
+## Day 14
 
+### 使用Dependency Injection這個pattern又生出了一些額外的問題...
+
+先暴力解決了...
+
+```
+// var submissionSource ISubmissionSource = &DatabaseSubmissionSource{}
+var submissionSource = &DatabaseSubmissionSource{}
+```
+
+> 測試的submission的code跟題目的要求沒有對起來，導致多花了好多時間在debug以前就正確的功能:(
+
+## Day 15
+
+### Check CompileError
+
+```
+1. 編譯時吐出 Exception：回傳 CE。
+2. 編譯後得不到執行檔檔名字串：回傳 CE。
+3. 編譯後，從執行檔檔名字串找不到檔案：回傳 CE。
+
+情況1的結果應該包含在情況2了
+```
+
+### Goroutine + Channel + Select
+
+[Goroutine](https://www.bogotobogo.com/GoLang/Golang_GoRoutines.php)
+
+light weight Thread
+
+[Channel](https://www.bogotobogo.com/GoLang/GoLang_Channels.php)
+
+Goroutines之間溝通的"管道"
+
+```
+data := <- my_channel // read from channel my_channel
+my_channel <- data    // write to channel my_channel
+```
+
+[Select](https://www.bogotobogo.com/GoLang/GoLang_Channel_with_Select.php)
+
+not like Switch, Select only use for Channel cases.
+
+### Check RuntimeError
+
+```
+1. 如果 IExecutor.execute() 丟出 Exception：表示程式執行途中發生意想不到的錯誤，回傳 RE。
+2. 如果執行完後沒有任何結果狀態：表示審核程式在執行程式時，在中途發生意外狀況而結束，回傳 RE。
+3. 如果執行完後超時：回傳 TLE。
+4. 如果執行途中程式壞掉：回傳 RE。
+
+情況1的結果應該包含在情況2了
+```
+
+### 困難點
+
+要確認command line執行的程式，是否有在timeOutSeconds內完成，這點還是蠻麻煩的...
+
+[CommandContext + WithTimeout](https://stackoverflow.com/questions/67750520/golang-context-withtimeout-doesnt-work-with-exec-commandcontext-su-c-command)
+
+* 看來只要<-ctx.Done()這個Channel有東西，而這個東西(ctx.Err())是context.DeadlineExceeded的話就代表超時了。
+
+* if err := cmd.Wait(); err != nil 代表 RuntimeError
 
 ## Reference
 
