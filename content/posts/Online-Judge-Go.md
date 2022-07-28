@@ -374,6 +374,111 @@ not like Switch, Select only use for Channel cases.
 
 * if err := cmd.Wait(); err != nil 代表 RuntimeError
 
+## Day 16
+
+> [Big Misconceptions about Bare Metal, Virtual Machines, and Containers](https://www.youtube.com/watch?v=Jz8Gs4UHTO8&t=3s)
+
+以下這段code真的把runner程式底下的a.txt刪掉了！雖然想對LeetCode實驗看看"rm -rf/"，不過怕被吉所以還是算了吧哈哈。
+
+```
+fun main() {
+ val inputs = readLine()!!.split(' ')
+ val a = inputs[0].toInt();
+ val b = inputs[1].toInt();
+ val c = inputs[2].toInt();
+ ProcessBuilder("rm", "a.txt").start().waitFor()
+ println("${a + b + c}")
+}
+```
+
+看來之前的kotlin image架構不對的問題，是直接先放著了哈哈...
+
+### Golang struct Constructor
+
+沒有Constructor真的麻煩，每個struct現在都要有init()這個方法，所以連帶著interface也要增加init()這個方法了...
+
+### Docker Compile Code
+
+```
+完整指令:
+"docker",
+"run",
+"--rm",
+"-v",
+"${System.getProperty("user.dir").appendPath(workspace)}:/$workspace",
+"zenika/kotlin",
+"kotlinc",
+"/$codeFilePath",
+"-include-runtime",
+"-d",
+"/$executableFilePath"
+
+分析:
+docker run [映像檔名稱] [指令] -> 建立並進入container後，執行指令。
+docker run [zenika/kotlin] [kotlinc /$codeFilePath -include-runtime -d /$executableFilePath]
+
+--rm -> container執行完後自動刪除container
+
+-v [主系統目錄位置]:[Docker 內容器檔案系統目錄位置] -> 兩個位址的內容同步
+"-v ${System.getProperty("user.dir").appendPath(workspace)}:/$workspace",
+```
+
+* [redirect compile process error](https://pkg.go.dev/os/exec#Cmd.StderrPipe)
+
+
+### Docker Execute Code
+
+我這邊處理可執行檔的輸入輸出方式是用"StdinPipe/StdoutPipe"，不是再去處理file的東西。
+
+```
+完整指令:
+"docker",
+"run",
+"--rm",
+"--name",
+DOCKER_CONTAINER_NAME,
+"-v",
+"${System.getProperty("user.dir").appendPath(workspace)}:/$workspace",
+"zenika/kotlin",
+"sh", 這兩個應該不用(？
+"-c", 這兩個應該不用(？
+"java -jar /$executableFilename < /$inputFilePath > /$outputFilePath" -> "java -jar /$executableFilename"
+
+分析:
+--name DOCKER_CONTAINER_NAME -> 當執行executableFilename產生TLE時，
+就需要先kill該container(DOCKER_CONTAINER_NAME)，才能 kill 執行這個command的Process(executeProcess)。
+```
+
+### 困難點
+
+之前遇到的問題現在大概知道是發生什麼事了，不就是container裡沒有kotlinc這個compiler嗎哈哈...
+
+```
+Command
+[docker run --rm -v /Users/jimmy/Documents/side-project/online-judge-runner-go/workspace:/workspace dyninka/kotlin:dyninka kotlinc /workspace/_code.kt -include-runtime -d /workspace/_code.jar]
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:380: starting container process caused: exec: "kotlinc": executable file not found in $PATH: unknown.
+```
+
+## Day 17
+
+使用multiprocess的方式執行兩個Judge-Service(就是開兩個terminal執行go run . [runner] 而已)。
+
+結果如下，兩個process都還是會去執行同一筆submission
+
+runner 1先拿到submission -> runner 2拿到submission -> runner 1 serResult -> runner 2 setResult
+
+大概是這樣，所以還是用個Task Queue比較保險啊！
+
+```
+go run . 1
+compile file name _code1.kt
+Submission 102: Accepted - Score: 100 (0.1)
+
+go run . 2
+compile file name _code2.kt
+Submission 102: Accepted - Score: 100 (0.093)
+```
+
 ## Reference
 
 [go-module](https://geektutu.com/post/quick-golang.html)
