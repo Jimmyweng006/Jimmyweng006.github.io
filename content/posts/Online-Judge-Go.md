@@ -461,6 +461,8 @@ docker: Error response from daemon: OCI runtime create failed: container_linux.g
 
 ## Day 17
 
+### Multiprocess of Judge-Service
+
 使用multiprocess的方式執行兩個Judge-Service(就是開兩個terminal執行go run . [runner] 而已)。
 
 結果如下，兩個process都還是會去執行同一筆submission
@@ -478,6 +480,94 @@ go run . 2
 compile file name _code2.kt
 Submission 102: Accepted - Score: 100 (0.093)
 ```
+
+### Redis
+
+```
+docker pull redis -> 拉Redis的image
+docker run --name judge-redis -p 6379:6379 -d redis
+-d 背景執行
+-p 參數，去將 Docker 容器內的 port 與我們主機實際的 port 去做對應
+```
+
+查了task queue後找到[這個](https://taskq.uptrace.dev/guide/golang-task-queue.html#creating-queues-and-tasks)，研究了老半天發現其實也不用這麼複雜。
+
+只要有rpush跟lpop即可...[參考](https://blog.csdn.net/pengpengzhou/article/details/108361064)
+
+* [parse JSON string to struct](https://stackoverflow.com/questions/47270595/how-to-parse-json-string-to-struct)
+
+* [defer](https://www.evanlin.com/golang-know-using-defer/)
+
+A defer statement defers the execution of a function until the surrounding function returns.
+
+* [context]()
+
+### Redis出錯時的處理
+
+#### Redis連線失效
+
+使用rdb之前最多retry一次，用之前也要檢查連線是否存在。
+
+```go
+func getConnection(rdb *redis.Client) error {
+	ctx := context.Background()
+	pong, err := rdb.Ping(ctx).Result()
+
+	if err != nil {
+		fmt.Println("ping error, try reconnect", err.Error())
+		rdb = redis.NewClient(&redis.Options{
+			// Addr: ":6379",
+		})
+		pong, err = rdb.Ping(ctx).Result()
+		return err
+	}
+
+	fmt.Println("ping result:", pong)
+	return nil
+}
+
+if err = getConnection(rdb); err != nil {
+    isOK = false
+    c.JSON(http.StatusInternalServerError, gin.H{
+        "redis": "disconnection",
+    })
+    return
+}
+```
+#### POST /submissions/restart && POST /submissions/{id}/restart
+
+* Q: 因為**Data-Management-Service**除了把submission記錄在Postgres，還需要額外往Redis放submission，好讓**Judge-Service**去消化掉那些submission。那如果現在Redis的submission跟Postgres的submission不一致怎麼辦(e.g. Redis斷線導致submission沒有被放進Redis，那當然也就沒有被judge)？
+* A: 多了兩隻API，讓他們去Postgres找出尚未judge的submission，並且都放回Redis裡。
+
+* restartSubmissionsHandler會遇到典型的[1 + N problem](https://segmentfault.com/a/1190000039421843)
+
+submission table與testcase table透過problemId關聯起來。
+
+如果今天要找出所有unjudged的submission，並將這些submission相關的testcases包成[]JudgerSubmissionData。
+比較簡單的做法就需要1(找出所有result = "-"的submission) + N(找N個submission的testcase)個query。
+
+這樣其實蠻耗資料庫的資源的(多個connection)，所以這邊的解法是
+1. find all unjudged submissoins and its problemId
+2. find it's related testCases
+3. combine to JudgerSubmissionData and push to Redis
+
+query數從1 + N -> 1 + 1
+
+* 測試普通使用者使用 POST /submissions/restart這個API，status code應該為StatusUnauthorized -> 成功
+
+* Multiprocess of Judge-Service -> 成功 
+
+* redis: can't marshal main.JudgerSubmissionData (implement encoding.BinaryMarshaler)
+
+```go
+ctx := context.Background()
+val, err := rdb.RPush(ctx, newSubmission.Language, judgerSubmissionData).Result()
+if err != nil {
+    panic(err)
+}
+```
+
+Redis的操作還是用.Result()檢查一下比較好。Judge Service一直沒拿到資料，一開始以為是斷線問題，結果是JSON Serialize的問題... [serialize and desirialize of JSON](https://codewithyury.com/how-to-correctly-serialize-json-string-in-golang/)
 
 ## Reference
 
