@@ -17,7 +17,7 @@ isCJKLanguage: true
 今天主要就是選擇go的web框架，這邊選的是gin，單純就是該框架的網路資源目前看起來是最多的。
 
 簡單弄一個router就可以收工了。
-```
+```go
 r.GET("/problems", func(c *gin.Context) {
     c.String(http.StatusOK, "There are no problems set yet.")
 })
@@ -27,7 +27,7 @@ r.GET("/problems", func(c *gin.Context) {
 
 定義Problem.go跟TestCase.go
 
-```
+```go
 type Problem struct {
 	Id          string     `json:"id"`
 	Title       string     `json:"title"`
@@ -44,7 +44,7 @@ type Problem struct {
 目標: 處理api structure
 
 這邊用api分組的方式來避免寫很多重複的uri prefix
-```
+```go
 problems := r.Group("/problems")
 {
     problems.GET("/", getProblemsHandler)
@@ -57,7 +57,7 @@ problems := r.Group("/problems")
 ```
 
 而傳入的JSON body轉為struct的方式則是如下
-```
+```go
 err := c.Bind(&newProblem)
 if err != nil {
     c.String(http.StatusBadRequest, fmt.Sprintf("create problem err: %s", err.Error()))
@@ -77,7 +77,7 @@ $ gin --appPort 8080 run .
 
 for loop range的時候拿到的值不是直接reference的，所以update的時候需要透過index去改。
 
-```
+```go
 code:
 nums := []int{10, 20, 30, 40}
 for i, num := range nums {
@@ -101,7 +101,7 @@ output:
 Q: 處理create problem帶的參數錯誤時，應該要回傳400 Bad Request的情況。
 
 A: 前面的error handling處理好這部分了，不過要記得提早return不然後面的code還會被執行到。
-```
+```go
 if err != nil {
     c.String(http.StatusBadRequest, fmt.Sprintf("create problem err: %s", err.Error()))
     return
@@ -141,7 +141,7 @@ $ go get -u gorm.io/gorm
 $ go get -u gorm.io/driver/postgres
 ```
 * initDatabase & create Table:
-```
+```go
 // init Database
 func initDatabase() (db *gorm.DB, err error) {
 	dsn := "host=localhost user=postgres password=123456789 " +
@@ -196,7 +196,7 @@ db.AutoMigrate(&ProblemTable{}, &TestCaseTable{})
 
 猜對囉，果然不自己動手寫寫看都不知道會遇到什麼問題哈哈...
 
-```
+```go
 for rows.Next() {
     var testcase TestCaseTable
     tx.ScanRows(rows, &testcase)
@@ -315,7 +315,7 @@ printf("%v")的結果怪怪的，原來是enum還要implement func (r Result) St
 
 先暴力解決了...
 
-```
+```go
 // var submissionSource ISubmissionSource = &DatabaseSubmissionSource{}
 var submissionSource = &DatabaseSubmissionSource{}
 ```
@@ -500,7 +500,7 @@ docker run --name judge-redis -p 6379:6379 -d redis
 
 A defer statement defers the execution of a function until the surrounding function returns.
 
-* [context]()
+* todo [context](https://blog.wu-boy.com/2020/05/understant-golang-context-in-10-minutes/)
 
 ### Redis出錯時的處理
 
