@@ -16,7 +16,7 @@ isCJKLanguage: true
 
 ## Operating System
 
-### Program & Process & Thread & Process/Thread pool
+### Program & Process & Thread
 
 * Program: 放在Secondary Storage的程式碼 -> 工廠的藍圖
 * Process: 在記憶體中執行的Program -> 根據工廠藍圖製造的工廠
@@ -44,8 +44,18 @@ isCJKLanguage: true
 * Concurrent vs Parallel
     * Concurrent: 透過Context Switch達成很多process能被cpu執行
     * Parallel: 很多process同時被很多cpu執行
-* Process/Thread pool
-    * 提前建立好Process/Thread，這樣可以減少建立和結束Process/Thread的資源消耗。
+
+### Process/Thread Pool & Connection Pool
+
+* Process/Thread Pool
+    * 為何需要multiple process/thread: parallel computing or I/O
+    * 為何需要pool: 提前建立好Process/Thread，這樣可以減少建立和結束Process/Thread的資源消耗。
+* Connection Pool
+    * 為何需要pool: 三次握手與四次揮手會需要花比較多時間跟資源處理。
+    * 一些應用(DB)是一個connection對應一個thread處理，所以同時不能有太多的connection。
+    * 數量設定
+        1. 根據應用層I/O模式: multithreads -> 邏輯CPU數量; reactor -> 無限制
+        2. 根據對象層(DB)調整
 
 ### I/O
 
@@ -118,7 +128,7 @@ isCJKLanguage: true
         2. 輪詢(同步)找到就緒的fd -> 異步喚醒就緒的fd
         3. user space遍歷整個fd array找到就緒的fd -> kernel只返回就緒的fd給user
     * 一個thread監聽多個fd: 這個特性在naive的作法也能達成，但是會多很多無謂的system call。
-    * 結論: 從原本的一個connection就有一個thread；到用一個thread監聽多個fd，等到有fd就緒後再另外開thread去執行。
+    * 結論: 從原本的一個connection就需要有一個thread去處理；到用一個thread監聽多個fd，等到有fd就緒後再另外開thread去執行。
     這樣就能應付一般的高併發場景了吧（？
 * 非阻塞I/O - Reactor
     * 使用到I/O多路復用(Multiplexing): 在linux是使用了epoll這個技術
