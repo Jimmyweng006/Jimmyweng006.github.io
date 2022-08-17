@@ -243,6 +243,30 @@ isCJKLanguage: true
 3. Key Exchange: client會使用上一個階段拿到的**非對稱加密公鑰**，來去加密由client產生的**對稱加密鑰匙(session key)**，最後再將 **加密過後的對稱加密鑰匙(encrypted session key)** 傳給server。
 4. Data Transimission: 之後client與server之間傳輸的資料就能透過session key加密啦，可喜可賀~
 
+### How to store passwords in the database?
+
+1. Use hash function(not include legacy hash function such as MD5, SHA-1) to encrypt password, then store it in database instead of storing plain password that user provide.
+2. Add a unique salt to password guarantees a unique hash value for each user's password.
+
+### Why is single-threaded Redis so fast?
+
+1. Memory-Based Database
+2. I/O multiplexing, again!!!
+
+### Consistent Hashing
+
+> [supplementary](https://www.youtube.com/watch?v=lm6Zeo3tqK4&t=58s)
+
+1. origin:
+    * distribute data evenly across different servers by using hash % n(# of servers).
+    * problem: server was removed or added, affect lots of data.
+2. hash ring:
+    * hash server(name or IP) and data as node simultaneously.
+    * hash value range becomes circular, and each data go clockwise(use upper_bound) to find corresponding server.
+    * problem: hash server node may unevenly appear in ring(data only go to small fraction of server).
+3. virtual server node:
+    * add a lot of virtual server nodes(s0_0, s0_1, s0_2...) into ring.
+
 ## Reference
 
 ### Process related
