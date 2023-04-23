@@ -26,7 +26,6 @@ jobs:
       - name: Build
         run: |
           hugo --minify
-          go install --tags extended
 
       - name: Install SCSS
         run: npm install -g sass
