@@ -24,17 +24,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: |
-          hugo --minify
-
-      # - name: Install SCSS
-      #   run: npm install -g sass
-      
-      # - name: List files in scss/ directory
-      #   run: ls scss/
-
-      # - name: Convert SCSS to CSS
-      #   run: sass scss/main.scss assets/css/main.css
+        run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -2,7 +2,7 @@
 title: "Java Multithreading"
 date: 2023-04-23T09:55:26+08:00
 draft: false
-tags: [JAVA]
+tags: [Java]
 categories: [Multithreading]
 author: "Jimmy_kiet"
 isCJKLanguage: true
