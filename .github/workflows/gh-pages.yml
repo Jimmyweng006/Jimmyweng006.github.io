@@ -9,7 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    
     steps:
+      - name: Checkout Code
       - uses: actions/checkout@v3
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
@@ -19,12 +21,18 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          # extended: true
+          extended: true
 
       - name: Build
         run: |
           hugo --minify
           go install --tags extended
+
+      - name: Install SCSS
+        run: npm install -g sass
+      
+      - name: Convert SCSS to CSS
+        run: sass scss/main.scss assets/css/main.css
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
