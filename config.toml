@@ -49,7 +49,7 @@ theme = 'LoveIt'
 # 主页的社交信息设置
   [params.social]
     GitHub = "Jimmyweng006"
-    Linkedin = "shih-chieh-weng-a7302b1b4/"
+    Linkedin = "%E7%BF%81%E5%A3%AB%E5%82%91-weng-a7302b1b4/"
 
 [params]
   title = "Jimmy's Blog"
