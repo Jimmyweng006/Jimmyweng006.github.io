@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jimmy ❤️ PU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    /* 主要文字 */
+    .text {
+      font-size: 120px;
+      color: #222;
+      font-weight: bold;
+      position: relative;
+      z-index: 10;
+    }
+    .heart {
+      color: red;
+      margin: 0 20px;
+    }
+
+    /* 愛心雨容器 */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* 單顆愛心 */
+    .hearts span {
+      position: absolute;
+      color: red;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <div class="text">
+    Jimmy <span class="heart">❤</span> PU
+  </div>
+
+  <script>
+    const heartsContainer = document.getElementById('hearts');
+
+    function createHeart() {
+      const heart = document.createElement('span');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (10 + Math.random() * 30) + 'px';
+      heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+      heart.style.opacity = Math.random();
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
