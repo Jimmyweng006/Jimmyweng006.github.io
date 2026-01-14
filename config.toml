@@ -1,4 +1,4 @@
-baseURL = 'https://jimmyweng006.github.io/'
+baseURL = 'https://jimmykiet.netlify.app/'
 languageCode = 'en-us'
 title = "Jimmy's Blog"
 theme = 'LoveIt'
@@ -37,6 +37,14 @@ theme = 'LoveIt'
     post = ""
     name = "categories"
     url = "/categories/"
+    title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "gallery"
+    pre = ""
+    post = ""
+    name = "gallery"
+    url = "/gallery/"
     title = ""
 
 # Hugo 解析文档的配置

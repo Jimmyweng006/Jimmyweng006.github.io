@@ -1,0 +1,47 @@
+{{- define "title" -}}
+  {{- .Title -}} - {{ .Site.Title -}}
+{{- end -}}
+
+{{- define "content" -}}
+  <div class="page gallery-single">
+    <h2 class="single-title animate__animated animate__pulse animate__faster">
+      {{- .Title -}}
+    </h2>
+    <div class="gallery-single-media">
+      <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
+    </div>
+    {{- with .Params.description -}}
+      <p class="gallery-single-desc">{{ . }}</p>
+    {{- end -}}
+    {{- if .Content -}}
+      <div class="content">
+        {{- .Content -}}
+      </div>
+    {{- end -}}
+  </div>
+
+  <style>
+    .gallery-single-media {
+      margin: 1.5rem 0 1rem;
+      text-align: center;
+    }
+
+    .gallery-single-media img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .gallery-single-desc {
+      font-size: 1rem;
+      color: #666666;
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+
+    [theme=dark] .gallery-single-desc {
+      color: #b3b3b3;
+    }
+  </style>
+{{- end -}}
