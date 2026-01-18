@@ -2,6 +2,7 @@ baseURL = 'https://jimmykiet.netlify.app/'
 languageCode = 'en-us'
 title = "Jimmy's Blog"
 theme = 'LoveIt'
+timeZone = 'Asia/Taipei'
 
 # 作者配置
 [author]

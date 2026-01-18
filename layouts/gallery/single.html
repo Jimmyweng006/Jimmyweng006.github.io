@@ -10,6 +10,7 @@
     <div class="gallery-single-media">
       <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
     </div>
+    <p class="gallery-single-date">{{ .Date.Format "2006-01-02 15:04" }}</p>
     {{- with .Params.description -}}
       <p class="gallery-single-desc">{{ . }}</p>
     {{- end -}}
@@ -40,8 +41,19 @@
       text-align: center;
     }
 
+    .gallery-single-date {
+      margin: 0 0 0.75rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #9a9a9a;
+    }
+
     [theme=dark] .gallery-single-desc {
       color: #b3b3b3;
+    }
+
+    [theme=dark] .gallery-single-date {
+      color: #7f7f7f;
     }
   </style>
 {{- end -}}

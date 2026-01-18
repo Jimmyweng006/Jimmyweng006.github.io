@@ -13,7 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss.SSSZ", time: true }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: false }

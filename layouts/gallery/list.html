@@ -19,6 +19,7 @@
               <h3 class="gallery-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               </h3>
+              <p class="gallery-date">{{ .Date.Format "2006-01-02 15:04" }}</p>
               {{- with .Params.description -}}
                 <p class="gallery-desc">{{ . }}</p>
               {{- end -}}
@@ -89,6 +90,12 @@
       line-height: 1.4;
     }
 
+    .gallery-date {
+      margin: 0 0 0.35rem;
+      font-size: 0.85rem;
+      color: #9a9a9a;
+    }
+
     [theme=dark] .gallery-card {
       background: #1f1f22;
       border-color: #2f3136;
@@ -101,6 +108,10 @@
 
     [theme=dark] .gallery-desc {
       color: #b3b3b3;
+    }
+
+    [theme=dark] .gallery-date {
+      color: #7f7f7f;
     }
   </style>
 {{- end -}}
